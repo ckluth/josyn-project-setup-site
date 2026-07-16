@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Source inventory — josyn-builder (follow-up consolidation repo) — josyn-project-setup</title>
+  <link rel="stylesheet" href="../site.css">
+  <script>var _sw=localStorage.getItem('sidebar-w');if(_sw)document.documentElement.style.setProperty('--sidebar-w',_sw);</script>
+</head>
+<body>
+  <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  <div id="nav-backdrop"></div>
+  <nav id="sidebar">
+    <div class="nav-header">josyn-project-setup</div>
+    <a href="../index.html" class="nav-home">Home</a>
+<details>
+  <summary class="nav-section">Ideas</summary>
+  <a href="../ideas/index.html" class="nav-link">Overview</a>
+<a href="../ideas/idea-0001-found-the-collaborative-decision-driven-agentic-way-of-working.html" class="nav-link">Idea 0001: Found the collaborative, decision-driven agentic way of working</a>
+<a href="../ideas/idea-0002-adoption-by-conviction.html" class="nav-link">Idea 0002: Adoption by conviction</a>
+<a href="../ideas/idea-0003-decision-culture-governance.html" class="nav-link">Idea 0003: Decision culture &amp; governance</a>
+<a href="../ideas/idea-0004-collaborative-way-of-working.html" class="nav-link">Idea 0004: Collaborative way-of-working</a>
+<a href="../ideas/idea-0005-succession-replaceability.html" class="nav-link">Idea 0005: Succession &amp; replaceability</a>
+<a href="../ideas/idea-0006-tooling-sandbox-reversibility.html" class="nav-link">Idea 0006: Tooling sandbox &amp; reversibility</a>
+<a href="../ideas/idea-0007-beacon-vs-substance-guardrail.html" class="nav-link">Idea 0007: Beacon vs. substance guardrail</a>
+<a href="../ideas/idea-0008-relationship-to-the-josyn-field.html" class="nav-link">Idea 0008: Relationship to the josyn field</a>
+</details>
+<details open>
+  <summary class="nav-section">Intermediate artifacts</summary>
+  <a href="index.html" class="nav-link">Overview</a>
+<a href="source-inventory-josyn-platform-sealed-poc.html" class="nav-link">Source inventory — josyn-platform (sealed PoC)</a>
+<a href="source-inventory-josyn-builder-follow-up-consolidation-repo.html" class="nav-link active">Source inventory — josyn-builder (follow-up consolidation repo)</a>
+</details>
+<a href="../search/index.html" class="nav-link">Search</a>
+
+  </nav>
+  <div id="sidebar-resizer"></div>
+  <main>
+    <article>
+      <h1 id="source-inventory-josyn-builder-follow-up-consolidation-repo">Source inventory — josyn-builder (follow-up consolidation repo)</h1>
+<blockquote>
+<p>Guard-free scratch (not a source of truth). A scouting inventory of the follow-up
+decision-trail repo <code>C:\DevGit\josyn-builder</code>, gathered to inform decomposition of
+Idea 0001. Skim-level, not a full port. Captured 2026-07-16.</p>
+</blockquote>
+<h2 id="what-it-is-current-state">What it is / current state</h2>
+<p>A <strong>temporary migration workshop</strong> (decision-trail method) whose job is to
+re-decide the JOSYN platform and then disappear — output is meant to be a set of
+clean new repos. Still a one-man effort; target must be collaboration-ready
+(thorough ADRs). Trail is <strong>mostly settled</strong>:</p>
+<ul>
+<li>ADRs: <strong>25/27 accepted</strong>, <strong>2 proposed</strong> (0023, 0027); none draft/abandoned.</li>
+<li>Ideas: <strong>18 promoted, 4 seed, 1 dropped</strong>.</li>
+<li>Plans: <strong>4 done, 1 active, 1 draft</strong>.</li>
+<li>Active work: the <strong>requirements-driven re-start simulation</strong> (plan 0002), now at
+<strong>Tier 2 components</strong>.</li>
+</ul>
+<p>Layout under <code>docs/</code>: <code>ideas/</code> (24), <code>decisions/</code> (27), <code>plans/</code> (6), <code>derived/</code>,
+<code>intermediate-artifacts/</code>, <code>deliverables/</code>, plus <code>overview.md</code>, <code>guide.md</code>,
+<code>working-method.md</code>, <code>travel-diary.md</code>.</p>
+<h2 id="decision-landscape-27-adrs-clustered">Decision landscape — 27 ADRs, clustered</h2>
+<ul>
+<li><strong>A. Decision-trail / method / governance</strong> (foundational) — 0001 adopt
+decision-trail; 0003 repo continuity / defer pilot-seat; 0012 tags/vocabulary;
+0014 trail v2.7; 0026 trail v2.16; 0027 consolidate agent guidance (proposed).</li>
+<li><strong>B. Repo landscape / taxonomy / naming / DAG / versioning / manifest</strong>
+(foundational) — 0002 poly-repo + taxonomy; 0005 namespace-mirrors-name; 0006
+strictly-tiered DAG; 0007 SemVer + pinned platform set; 0008 derived platform
+manifest; 0022 numbered derived tiers / retire &quot;layer&quot;.</li>
+<li><strong>C. Re-start / migration / operating model / platform core / whitepaper</strong> — 0004
+PoC repos read-only; 0009 trail-first simulation; 0011 two-process-space split;
+0013 requirements-driven coarse-to-fine; 0015 operating model; 0016 extension
+seam; 0017 result-pattern; 0018 property-bag; 0019 jip transport; 0023
+commons-helpers (proposed); 0024/0025 JobSystem-Next whitepaper.</li>
+<li><strong>D. Classification vocabulary</strong> (cross-cutting language) — 0020 axes +
+vocabulary; 0021 family-first; 0022 numbered tiers / glosses.</li>
+</ul>
+<h2 id="ideas-landscape">Ideas landscape</h2>
+<p>State: <strong>4 seed, 18 promoted, 1 dropped</strong>; no explicit <code>decomposed</code>. Notable open
+seeds:</p>
+<ul>
+<li><strong>0006</strong> This repo becomes the agentic pilot-seat</li>
+<li><strong>0007</strong> Untangle josyn-backend (melting-pot decomposition)</li>
+<li><strong>0008</strong> Quality-review the latecomer repos (josyn-jrp, josyn-surface)</li>
+<li><strong>0014</strong> Ensure quality — a firm founding concern; standards/criteria are the means</li>
+</ul>
+<p>Relationships: 0019 <code>Parent: 0018</code> (commons-helpers), now dropped (subsumed by
+ADR-0021); 0021→ADR-0022; 0022→ADR-0021; 0023→ADR-0027.</p>
+<h2 id="plans-6">Plans — 6</h2>
+<ul>
+<li><strong>0001</strong> Repo-landscape follow-ups — implements ADR-0002 — <strong>done</strong>.</li>
+<li><strong>0002</strong> Re-start simulation — implements ADR-0009 + 0013 — <strong>active</strong> (Tier 2).</li>
+<li><strong>0003</strong> Adopt/backfill decision-trail v2.3 tags — implements ADR-0012 — <strong>done</strong>.</li>
+<li><strong>0004</strong> JobSystem-Next whitepaper — implements ADR-0024 — <strong>done</strong>.</li>
+<li><strong>0005</strong> Merge copilot-instructions into AGENTS.md, remove .github — implements
+ADR-0027 — <strong>draft</strong>.</li>
+</ul>
+<h2 id="derived-projections-the-current-intended-target-picture-highest-value-carry-forward">Derived projections — the current intended TARGET picture (highest-value carry-forward)</h2>
+<p><strong>Repo-world / taxonomy (<code>docs/derived/repo-landscape.md</code>):</strong> one concern per repo,
+poly-repo; four repo roles — <code>artifact</code>, <code>concern</code>, <code>pilot-seat</code>, <code>platform-docs</code>;
+repo name mirrors package namespace (<code>JOSYN.*</code> → kebab-case); dependencies form a
+strictly-tiered DAG of NuGet <code>PackageReference</code>s; independent SemVer per repo,
+bottom-up release ordering by tier; a <strong>pinned platform set</strong> = the exact version
+set that names &quot;the platform right now&quot;.</p>
+<p><strong>Classification vocabulary (<code>docs/derived/classification-vocabulary.md</code>):</strong> slogan
+&quot;family up front, axes in the back room, tiers are numbers&quot;; four grouping nouns —
+concept, component, family, tier; primary classifier = family/sub-family
+(&quot;sharpen, don't dissolve&quot;); six axes — tier, stability, form, concern, reach,
+cardinality; tiers are computed numbers (0 primitives, 1 foundation, 2
+libraries-and-contracts, 3 applications); retired words — helper, layer, loose
+&quot;commons&quot;, loose &quot;primitive&quot;, vague &quot;category/type&quot;.</p>
+<h2 id="reusable-gold-vs.builder-specific">Reusable gold vs. builder-specific</h2>
+<p><strong>Durable:</strong> decision-trail discipline (0001, 0009, 0012, 0014, 0026); poly-repo +
+naming + DAG + SemVer + manifest (0002, 0005, 0006, 0007, 0008); classification
+vocabulary (0020, 0021, 0022); platform-core constraints (0011, 0013, 0015, 0016,
+0017, 0018, 0019); JobSystem-Next whitepaper (0024, 0025).</p>
+<p><strong>Builder-specific / temporary:</strong> 0003 (defer pilot-seat), 0027 (agent-guidance
+consolidation for this repo's tooling), the workshop framing itself, <code>.github</code>
+merge / Copilot-vs-AGENTS plumbing.</p>
+<h2 id="open-unfinished-threads">Open / unfinished threads</h2>
+<p>Plan 0002 active, parked at Tier 2. Seed ideas 0006, 0007, 0008, 0014 unresolved.
+ADR-0023 (commons-helpers) and ADR-0027 (agent guidance) still proposed; plan 0005
+not executed. Diary's next step: human review of ADR-0027, then merge guidance if
+accepted. Blocked areas: latecomer repos, backend untangling, pilot-seat / non-
+artifact concerns.</p>
+<h2 id="candidate-fault-lines-this-sources-view">Candidate fault-lines (this source's view)</h2>
+<ol>
+<li>Repo landscape (roles/naming/versioning/DAG) · 2. Decision method (decision-
+trail, ADR lifecycle, tags, regeneration) · 3. Classification language
+(family/subfamily/tier/axes) · 4. Platform-core architecture (two-process split,
+IPC, operating model) · 5. Component stack (result-pattern, property-bag, jip,
+commons-*) · 6. Cross-cutting concerns (extension seam, docs derivation, quality
+governance) · 7. Migration/restart policy (PoC read-only, simulation, coarse-to-
+fine) · 8. Agent working model (single guidance file, harness-independent
+instructions).</li>
+</ol>
+
+    </article>
+  </main>
+  <script>
+    var toggle   = document.getElementById('nav-toggle');
+    var backdrop = document.getElementById('nav-backdrop');
+    function closeNav() { document.body.classList.remove('nav-open'); }
+    toggle.addEventListener('click', function() {
+      document.body.classList.toggle('nav-open');
+    });
+    backdrop.addEventListener('click', closeNav);
+    document.querySelectorAll('#sidebar a').forEach(function(a) {
+      a.addEventListener('click', closeNav);
+    });
+
+    var resizer = document.getElementById('sidebar-resizer');
+    var resizeW = null;
+    resizer.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    resizer.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      document.addEventListener('mousemove', onResize);
+      document.addEventListener('mouseup', stopResize);
+    });
+    resizer.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      document.addEventListener('touchmove', onTouchResize, { passive: false });
+      document.addEventListener('touchend', stopTouchResize);
+    }, { passive: false });
+    function onResize(e) {
+      resizeW = Math.max(160, Math.min(600, e.clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function onTouchResize(e) {
+      e.preventDefault();
+      resizeW = Math.max(160, Math.min(600, e.touches[0].clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function stopResize() {
+      document.removeEventListener('mousemove', onResize);
+      document.removeEventListener('mouseup', stopResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+    function stopTouchResize() {
+      document.removeEventListener('touchmove', onTouchResize);
+      document.removeEventListener('touchend', stopTouchResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+  </script>
+  <script src="../mermaid.min.js"></script><script>mermaid.initialize({startOnLoad:false,theme:'dark'});mermaid.run({querySelector:'.mermaid'});</script>
+</body>
+</html>

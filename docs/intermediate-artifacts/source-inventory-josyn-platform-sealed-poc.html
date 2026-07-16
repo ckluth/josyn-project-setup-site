@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Source inventory — josyn-platform (sealed PoC) — josyn-project-setup</title>
+  <link rel="stylesheet" href="../site.css">
+  <script>var _sw=localStorage.getItem('sidebar-w');if(_sw)document.documentElement.style.setProperty('--sidebar-w',_sw);</script>
+</head>
+<body>
+  <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  <div id="nav-backdrop"></div>
+  <nav id="sidebar">
+    <div class="nav-header">josyn-project-setup</div>
+    <a href="../index.html" class="nav-home">Home</a>
+<details>
+  <summary class="nav-section">Ideas</summary>
+  <a href="../ideas/index.html" class="nav-link">Overview</a>
+<a href="../ideas/idea-0001-found-the-collaborative-decision-driven-agentic-way-of-working.html" class="nav-link">Idea 0001: Found the collaborative, decision-driven agentic way of working</a>
+<a href="../ideas/idea-0002-adoption-by-conviction.html" class="nav-link">Idea 0002: Adoption by conviction</a>
+<a href="../ideas/idea-0003-decision-culture-governance.html" class="nav-link">Idea 0003: Decision culture &amp; governance</a>
+<a href="../ideas/idea-0004-collaborative-way-of-working.html" class="nav-link">Idea 0004: Collaborative way-of-working</a>
+<a href="../ideas/idea-0005-succession-replaceability.html" class="nav-link">Idea 0005: Succession &amp; replaceability</a>
+<a href="../ideas/idea-0006-tooling-sandbox-reversibility.html" class="nav-link">Idea 0006: Tooling sandbox &amp; reversibility</a>
+<a href="../ideas/idea-0007-beacon-vs-substance-guardrail.html" class="nav-link">Idea 0007: Beacon vs. substance guardrail</a>
+<a href="../ideas/idea-0008-relationship-to-the-josyn-field.html" class="nav-link">Idea 0008: Relationship to the josyn field</a>
+</details>
+<details open>
+  <summary class="nav-section">Intermediate artifacts</summary>
+  <a href="index.html" class="nav-link">Overview</a>
+<a href="source-inventory-josyn-platform-sealed-poc.html" class="nav-link active">Source inventory — josyn-platform (sealed PoC)</a>
+<a href="source-inventory-josyn-builder-follow-up-consolidation-repo.html" class="nav-link">Source inventory — josyn-builder (follow-up consolidation repo)</a>
+</details>
+<a href="../search/index.html" class="nav-link">Search</a>
+
+  </nav>
+  <div id="sidebar-resizer"></div>
+  <main>
+    <article>
+      <h1 id="source-inventory-josyn-platform-sealed-poc">Source inventory — josyn-platform (sealed PoC)</h1>
+<blockquote>
+<p>Guard-free scratch (not a source of truth). A scouting inventory of the sealed
+PoC repo <code>C:\DevGit\josyn-platform</code>, gathered to inform decomposition of
+Idea 0001. Skim-level, not a full port. Captured 2026-07-16.</p>
+</blockquote>
+<h2 id="what-it-is">What it is</h2>
+<p>Authoritative <strong>architectural reference</strong> for JOSYN (&quot;Job System Next&quot;) — a .NET
+platform executing scheduled jobs as isolated processes, orchestrated by a central
+scheduler over a named-pipe (JAP) protocol. <strong>No code — only</strong> architecture, ADRs,
+plans, sanity criteria, cross-cutting docs. Currently <em>also</em> the <strong>agentic
+pilot-seat</strong> (the repo agents read first) — explicitly flagged <strong>provisional</strong>.
+State: core repos/packaging settled; backend + scheduling mature; surface / JRP /
+Gateway stream still in active transition.</p>
+<p>Folders: <code>architecture/</code>, <code>solution-architecture/</code>, <code>decisions/</code> (45 ADRs),
+<code>plans/</code> (13), <code>proposals/</code> (1), <code>guides/</code>, <code>sanity/</code>, <code>thinking/</code>, <code>repos/</code>,
+<code>README.md</code>, <code>ROADMAP.md</code>, <code>AGENTS.md</code>, <code>MAINTAINERS.md</code>.</p>
+<h2 id="decision-landscape-45-adrs-clustered">Decision landscape — 45 ADRs, clustered</h2>
+<ul>
+<li><strong>A. Identity / naming / repo boundaries</strong> — 001, 002, 003, 015, 023, 025, 030,
+033. Platform vocabulary + repo boundaries. Foundational: 001, 002, 003, 023,
+025, 033.</li>
+<li><strong>B. Docs / governance / maintenance</strong> — 005 (documentation governance +
+agentic way of work), 012, 032. Foundational: 005.</li>
+<li><strong>C. Backend structure / service patterns / state holders</strong> — 004, 005B-01, 006,
+006B-01/02, 007, 007B-01/02, 008, 009, 010, 017, 017B-01/02/03, 019. Foundational:
+004, 006, 007, 009, 010, 017, 019; the <code>-B-</code> ADRs are narrower/local.</li>
+<li><strong>D. Job execution / CLI / protocol semantics</strong> — 011, 011B-01, 013, 014, 016,
+018, 018B-01, 021, 022, 028. Foundational: 011, 016, 018, 021, 022.</li>
+<li><strong>E. Scheduling / time / registry</strong> — 024, 026, 027, 029. Foundational: 026, 029.</li>
+<li><strong>F. Surface / JRP / Gateway evolution</strong> — 020, 030, 031, 032, 033, 034, 035.
+Foundational: 031, 033, 034, 035.</li>
+</ul>
+<p>Especially cross-cutting: 001, 004, 005, 007, 009, 010, 017, 019, 025, 026, 031,
+033, 034, 035.</p>
+<h2 id="plans-13">Plans — 13</h2>
+<ul>
+<li><code>context-provider-poc-plan.md</code> — proves ADR-009 context provider — <strong>complete</strong>.</li>
+<li><code>ADR-020-implementation-plan.md</code> — out-of-process company adapter — <strong>complete</strong>.</li>
+<li><code>ADR-025-session-broker-implementation.md</code> — SessionBroker extraction — <strong>complete</strong>.</li>
+<li><code>ADR-026-schedule-definition-language-implementation.md</code> — schedule language —
+<strong>partly complete, rewrite phases remain</strong>.</li>
+<li><code>ADR-027-028-scheduling-implementation.md</code> — schedule store + argument records +
+TimeScheduler — <strong>substantially complete</strong>.</li>
+<li><code>ADR-030-031-surface-mvp1-implementation.md</code> — read-only CLI — <strong>complete</strong>.</li>
+<li><code>ADR-030-031-surface-mvp2-plan.md</code> — read/write split — <strong>MVP-2a shipped, 2b
+designed</strong>.</li>
+<li><code>ADR-030-031-surface-mvp2b-session-summary.md</code> / <code>...-mvp2-handoff.md</code> — session
+close / handoff — <strong>complete, uncommitted at time of writing</strong>.</li>
+<li><code>ADR-033-surface-rename-implementation-plan.md</code> — surface→JRP/Gateway rename —
+<strong>executed</strong>.</li>
+<li><code>ADR-033-followup-plan.md</code> — remediation + deferred work — <strong>ongoing</strong>.</li>
+<li><code>current-plan-surface-jrp-gateway.md</code> — live continuation (Gateway Host +
+HttpAgent) — <strong>active; HttpAgent is the live item, Gateway Host done</strong>.</li>
+<li><code>sessionstore-poc-roadmap.md</code> — early PoC roadmap — <strong>largely obsolete history</strong>.</li>
+</ul>
+<h2 id="architecture-cross-cutting-docs">Architecture &amp; cross-cutting docs</h2>
+<ul>
+<li><code>architecture/</code> — main reusable platform architecture: runtime flow, naming,
+coding standards, storage, repo structure, local-build conventions.</li>
+<li><code>solution-architecture/</code> — system-in-the-world: context, settled decisions,
+deployment, identity/security, ops, company fit, lifecycle, docs/training.</li>
+<li><code>guides/</code> — narrative cross-repo concept guides for humans.</li>
+<li><code>sanity/</code> — agent-driven quality protocol, criteria, repo notes, state tracking.</li>
+<li><code>thinking/</code> — informal exploratory design notes.</li>
+</ul>
+<h2 id="reusable-gold-vs.poc-specific">Reusable gold vs. PoC-specific</h2>
+<p><strong>Durable:</strong> repo/layer naming + boundary taxonomy; result-as-value / no-throw /
+static-first coding rules; JIP/named-pipe session-isolation model; SessionStore /
+JobRegistry / schedule-store concepts; schedule language + evaluator strategy;
+JRP/Gateway split + HTTP binding + topology/bootstrap; adapter / impersonation /
+SessionBroker separation; sanity protocol + maintenance governance.</p>
+<p><strong>Likely re-decide (PoC scaffolding):</strong> the agentic pilot-seat placement here;
+transitional MVP-2/3 surface hacks (FakeAgent, bootstrap.ini sneak, transitional
+command envelopes); early backend shaping + obsolete roadmaps; deprecated
+docs/index/tooling remnants; unresolved surface/Gateway transition pieces.</p>
+<h2 id="open-unfinished-threads">Open / unfinished threads</h2>
+<p>Agentic pilot-seat = provisional (README). ADR-033 follow-up: contract layering
+(keep backend enum in JRP vs sever). Gateway root build/pack gap. Stale
+<code>JOSYN.Backend.SurfaceAgent</code> cleanup. HttpAgent still active (retire
+FakeAgent/CompositeSurfaceAgent). Job-registry placement for <code>start-session</code>
+resolution open. MVP-3 schedule writes deferred. Several solution-architecture docs
+still TBD. ROADMAP M4/M5 upcoming.</p>
+<h2 id="candidate-fault-lines-this-sources-view">Candidate fault-lines (this source's view)</h2>
+<ol>
+<li>Identity &amp; naming · 2. Repo/package boundaries · 3. Backend composition &amp;
+orchestration · 4. Protocol seams (JAP/JRP/JIP) · 5. Scheduling &amp; persistence ·</li>
+<li>Surface / human-facing edge · 7. Deployment / ops / bootstrap · 8. Agent
+governance / documentation / sanity.</li>
+</ol>
+
+    </article>
+  </main>
+  <script>
+    var toggle   = document.getElementById('nav-toggle');
+    var backdrop = document.getElementById('nav-backdrop');
+    function closeNav() { document.body.classList.remove('nav-open'); }
+    toggle.addEventListener('click', function() {
+      document.body.classList.toggle('nav-open');
+    });
+    backdrop.addEventListener('click', closeNav);
+    document.querySelectorAll('#sidebar a').forEach(function(a) {
+      a.addEventListener('click', closeNav);
+    });
+
+    var resizer = document.getElementById('sidebar-resizer');
+    var resizeW = null;
+    resizer.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    resizer.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      document.addEventListener('mousemove', onResize);
+      document.addEventListener('mouseup', stopResize);
+    });
+    resizer.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      document.addEventListener('touchmove', onTouchResize, { passive: false });
+      document.addEventListener('touchend', stopTouchResize);
+    }, { passive: false });
+    function onResize(e) {
+      resizeW = Math.max(160, Math.min(600, e.clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function onTouchResize(e) {
+      e.preventDefault();
+      resizeW = Math.max(160, Math.min(600, e.touches[0].clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function stopResize() {
+      document.removeEventListener('mousemove', onResize);
+      document.removeEventListener('mouseup', stopResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+    function stopTouchResize() {
+      document.removeEventListener('touchmove', onTouchResize);
+      document.removeEventListener('touchend', stopTouchResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+  </script>
+  <script src="../mermaid.min.js"></script><script>mermaid.initialize({startOnLoad:false,theme:'dark'});mermaid.run({querySelector:'.mermaid'});</script>
+</body>
+</html>
