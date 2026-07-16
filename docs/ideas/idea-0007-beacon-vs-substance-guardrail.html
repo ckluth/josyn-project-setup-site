@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Idea 0007: Beacon vs. substance guardrail — josyn-project-setup</title>
+  <link rel="stylesheet" href="../site.css">
+  <script>var _sw=localStorage.getItem('sidebar-w');if(_sw)document.documentElement.style.setProperty('--sidebar-w',_sw);</script>
+</head>
+<body>
+  <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  <div id="nav-backdrop"></div>
+  <nav id="sidebar">
+    <div class="nav-header">josyn-project-setup</div>
+    <a href="../index.html" class="nav-home">Home</a>
+<details open>
+  <summary class="nav-section">Ideas</summary>
+<a href="idea-0001-found-the-collaborative-decision-driven-agentic-way-of-working.html" class="nav-link">Idea 0001: Found the collaborative, decision-driven agentic way of working</a>
+<a href="idea-0002-adoption-by-conviction.html" class="nav-link">Idea 0002: Adoption by conviction</a>
+<a href="idea-0003-decision-culture-governance.html" class="nav-link">Idea 0003: Decision culture &amp; governance</a>
+<a href="idea-0004-collaborative-way-of-working.html" class="nav-link">Idea 0004: Collaborative way-of-working</a>
+<a href="idea-0005-succession-replaceability.html" class="nav-link">Idea 0005: Succession &amp; replaceability</a>
+<a href="idea-0006-tooling-sandbox-reversibility.html" class="nav-link">Idea 0006: Tooling sandbox &amp; reversibility</a>
+<a href="idea-0007-beacon-vs-substance-guardrail.html" class="nav-link active">Idea 0007: Beacon vs. substance guardrail</a>
+<a href="idea-0008-relationship-to-the-josyn-field.html" class="nav-link">Idea 0008: Relationship to the josyn field</a>
+</details>
+<a href="../search/index.html" class="nav-link">Search</a>
+
+  </nav>
+  <div id="sidebar-resizer"></div>
+  <main>
+    <article>
+      <h1 id="idea-0007-beacon-vs.substance-guardrail">Idea 0007: Beacon vs. substance guardrail</h1>
+<ul>
+<li>Date: 2026-07-16</li>
+<li>Status: seed</li>
+<li>Parent: <a href="idea-0001-found-the-collaborative-decision-driven-agentic-way-of-working.html">Idea 0001: Found the collaborative, decision-driven agentic way of working</a></li>
+<li>Tags: agentic, guardrail</li>
+</ul>
+<h2 id="the-axis">The axis</h2>
+<p>The project has <strong>two goals</strong> in tension: it is both the <strong>deliverable itself</strong> and a
+<strong>beacon / experimental field</strong> for agentic work. The guardrail: <strong>experimenting must
+not let the project substance suffer</strong>.</p>
+<h2 id="why-it-matters">Why it matters</h2>
+<p>Without an explicit fence, the &quot;experimental field&quot; ambition can quietly erode the
+deliverable — and a damaged deliverable would discredit the whole agentic case with
+exactly the stakeholders we need to convince.</p>
+<h2 id="open-questions-seed">Open questions (seed)</h2>
+<ul>
+<li>How are experiments fenced from the deliverable substance?</li>
+<li>What counts as &quot;substance at risk&quot;, and who judges it?</li>
+<li>How do we separate experiment from deliverable in practice (branches, repos, gates)?</li>
+<li>How is a failed experiment rolled back without collateral damage?</li>
+</ul>
+
+    </article>
+  </main>
+  <script>
+    var toggle   = document.getElementById('nav-toggle');
+    var backdrop = document.getElementById('nav-backdrop');
+    function closeNav() { document.body.classList.remove('nav-open'); }
+    toggle.addEventListener('click', function() {
+      document.body.classList.toggle('nav-open');
+    });
+    backdrop.addEventListener('click', closeNav);
+    document.querySelectorAll('#sidebar a').forEach(function(a) {
+      a.addEventListener('click', closeNav);
+    });
+
+    var resizer = document.getElementById('sidebar-resizer');
+    var resizeW = null;
+    resizer.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    resizer.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      document.addEventListener('mousemove', onResize);
+      document.addEventListener('mouseup', stopResize);
+    });
+    resizer.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      document.addEventListener('touchmove', onTouchResize, { passive: false });
+      document.addEventListener('touchend', stopTouchResize);
+    }, { passive: false });
+    function onResize(e) {
+      resizeW = Math.max(160, Math.min(600, e.clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function onTouchResize(e) {
+      e.preventDefault();
+      resizeW = Math.max(160, Math.min(600, e.touches[0].clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function stopResize() {
+      document.removeEventListener('mousemove', onResize);
+      document.removeEventListener('mouseup', stopResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+    function stopTouchResize() {
+      document.removeEventListener('touchmove', onTouchResize);
+      document.removeEventListener('touchend', stopTouchResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+  </script>
+  <script src="../mermaid.min.js"></script><script>mermaid.initialize({startOnLoad:false,theme:'dark'});mermaid.run({querySelector:'.mermaid'});</script>
+</body>
+</html>
