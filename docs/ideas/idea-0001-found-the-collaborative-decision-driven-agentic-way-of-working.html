@@ -1,11 +1,42 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Idea 0001: Found the collaborative, decision-driven agentic way of working â€” josyn-project-setup</title>
+  <title>Idea 0001: Found the collaborative, decision-driven agentic way of working — josyn-project-setup</title>
   <link rel="stylesheet" href="../site.css">
   <script>var _sw=localStorage.getItem('sidebar-w');if(_sw)document.documentElement.style.setProperty('--sidebar-w',_sw);</script>
+<!-- josyn-access-gate:start -->
+<style id="jgate-hide">body{display:none !important;}</style>
+<script>
+(function(){
+  var KEY='josyn-gate', PW='josyn';
+  function removeHide(){var s=document.getElementById('jgate-hide');if(s)s.parentNode.removeChild(s);}
+  function unlock(){removeHide();var o=document.getElementById('jgate');if(o)o.parentNode.removeChild(o);}
+  if(sessionStorage.getItem(KEY)==='1'){removeHide();return;}
+  function build(){
+    var o=document.createElement('div');o.id='jgate';
+    o.style.cssText='position:fixed;inset:0;z-index:99999;background:#1e1e1e;color:#eee;display:flex;align-items:center;justify-content:center;font-family:system-ui,Segoe UI,sans-serif';
+    o.innerHTML='<form id="jgf" style="text-align:center;max-width:20rem">'
+      +'<h2 style="font-weight:600;margin:0 0 .5rem">Protected</h2>'
+      +'<p style="margin:0 0 1rem;opacity:.8">Enter the password to continue.</p>'
+      +'<input id="jgi" type="password" autocomplete="current-password" autofocus '
+      +'style="padding:.55rem .7rem;font-size:1rem;border-radius:6px;border:1px solid #555;background:#2a2a2a;color:#eee;width:100%;box-sizing:border-box">'
+      +'<div id="jge" style="color:#e66;height:1.2em;margin-top:.6rem;font-size:.9rem"></div>'
+      +'</form>';
+    document.body.appendChild(o);
+    removeHide();
+    var i=document.getElementById('jgi');if(i)i.focus();
+    document.getElementById('jgf').addEventListener('submit',function(e){
+      e.preventDefault();
+      if(document.getElementById('jgi').value===PW){sessionStorage.setItem(KEY,'1');unlock();}
+      else{document.getElementById('jge').textContent='Wrong password';document.getElementById('jgi').value='';document.getElementById('jgi').focus();}
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',build);else build();
+})();
+</script>
+<!-- josyn-access-gate:end -->
 </head>
 <body>
   <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
@@ -37,28 +68,28 @@
 <li>Tags: founding, culture, change-management, succession, agentic, decision-driven, governance, collaboration</li>
 </ul>
 <p>This is the <strong>founding idea</strong> for the project. It is deliberately broad and
-captured without deep investigation â€” a starting position now <strong>decomposed</strong> into
+captured without deep investigation — a starting position now <strong>decomposed</strong> into
 child ideas (see <strong>Decomposition</strong> at the end). The parent stays as the map.</p>
 <p><strong>What this idea is really about.</strong> Not the technical platform. The subject is
-<strong>people, culture, psychology, method, policy, and collaborative way-of-working</strong> â€”
+<strong>people, culture, psychology, method, policy, and collaborative way-of-working</strong> —
 the shift of a team into an agentic, decision-driven culture. The existing josyn
 work (the sealed PoC <code>josyn-platform</code> and the consolidation repo <code>josyn-builder</code>)
-is the <strong>field</strong> this plays out on â€” the substance, not the subject.</p>
+is the <strong>field</strong> this plays out on — the substance, not the subject.</p>
 <h2 id="background">Background</h2>
 <ul>
 <li>A new project in the company is in the start-position.</li>
 <li>A lot of groundwork was already done by an individual driver; there is much to
 bring in and much already done.</li>
 <li>There is a <strong>PoC</strong> (<code>josyn-platform</code>) carrying much value, many decisions, and
-carried-out plans â€” now logically sealed.</li>
+carried-out plans — now logically sealed.</li>
 <li>There is a follow-up <strong>decision-trail repo</strong> (<code>josyn-builder</code>) consolidating the
-PoC â€” still not collaborative â€” also holding many decisions and carried-out plans.</li>
+PoC — still not collaborative — also holding many decisions and carried-out plans.</li>
 <li>We do <strong>not</strong> start &quot;from scratch&quot;.</li>
 </ul>
 <h2 id="the-shift">The shift</h2>
 <ul>
 <li>The major change: from <strong>individual speed-boat</strong> to a <strong>collaborative project</strong>.</li>
-<li>This means a <strong>reset</strong> â€” and a need to <strong>re-decide &quot;all&quot;</strong> â€” but by the team, not
+<li>This means a <strong>reset</strong> — and a need to <strong>re-decide &quot;all&quot;</strong> — but by the team, not
 by decree.</li>
 </ul>
 <h2 id="the-drivers-stance">The driver's stance</h2>
@@ -66,7 +97,7 @@ by decree.</li>
 <li>The driver is team-lead and senior developer; originator of both JobSystem and
 the decision-trail method.</li>
 <li><strong>It is explicitly not about &quot;me&quot;.</strong> The person must become replaceable.</li>
-<li>Some core ideas are <strong>non-negotiable</strong> â€” <strong>agentic</strong> and <strong>decision-driven</strong> â€” but
+<li>Some core ideas are <strong>non-negotiable</strong> — <strong>agentic</strong> and <strong>decision-driven</strong> — but
 the aim is to <strong>convince, not to rule</strong>.</li>
 <li><strong>Succession is a goal:</strong> when the work is done, the driver wants to step back and
 let the &quot;new generation&quot; take over and own it.</li>
@@ -79,17 +110,17 @@ leave them unconvinced.</li>
 </ul>
 <h2 id="team-stakeholders">Team &amp; stakeholders</h2>
 <ul>
-<li><strong>3 young, clever teammates</strong> â€” architect-material; the intended new-generation
+<li><strong>3 young, clever teammates</strong> — architect-material; the intended new-generation
 owners.</li>
-<li><strong>4 technical leads</strong> (one of them the &quot;leads-lead&quot;) and a <strong>department head</strong> â€”
+<li><strong>4 technical leads</strong> (one of them the &quot;leads-lead&quot;) and a <strong>department head</strong> —
 peers and authority to bring along and keep aligned; they carry the weight of the
 traditional way.</li>
 </ul>
 <h2 id="method-tooling">Method &amp; tooling</h2>
 <ul>
-<li>Currently traditional: <strong>Azure DevOps</strong> â€” work items, pipelines, standard policy.</li>
+<li>Currently traditional: <strong>Azure DevOps</strong> — work items, pipelines, standard policy.</li>
 <li>The project's &quot;new way&quot; must run on <strong>GitHub</strong>, deliberately <strong>free of
-policy-burden</strong>, like the PoC â€” a low-friction experimental field.</li>
+policy-burden</strong>, like the PoC — a low-friction experimental field.</li>
 <li><strong>Reversibility is a hard constraint:</strong> a planned <strong>migration-switch back</strong> from
 the GitHub playground to the overheaded corporate standard must <strong>always remain
 possible</strong>.</li>
@@ -113,20 +144,20 @@ as a map. On 2026-07-16 it was <strong>decomposed</strong>: each axis was budded
 child idea (<code>Parent: 0001</code>); the parent stays as the map, and each child matures and
 promotes 1:1 to its own ADR.</p>
 <ul>
-<li><a href="idea-0002-adoption-by-conviction.html">Idea 0002: Adoption by conviction</a> â€” winning
+<li><a href="idea-0002-adoption-by-conviction.html">Idea 0002: Adoption by conviction</a> — winning
 genuine buy-in for the non-negotiables, across young architects and peers/authority.</li>
 <li><a href="idea-0003-decision-culture-governance.html">Idea 0003: Decision culture &amp; governance</a>
-â€” &quot;by reason, not by boss&quot;; decision-trail as the team's shared instrument.</li>
-<li><a href="idea-0004-collaborative-way-of-working.html">Idea 0004: Collaborative way-of-working</a> â€”
-one-man â†’ team mechanics: roles, ownership, review, hand-offs.</li>
-<li><a href="idea-0005-succession-replaceability.html">Idea 0005: Succession &amp; replaceability</a> â€”
+— &quot;by reason, not by boss&quot;; decision-trail as the team's shared instrument.</li>
+<li><a href="idea-0004-collaborative-way-of-working.html">Idea 0004: Collaborative way-of-working</a> —
+one-man ? team mechanics: roles, ownership, review, hand-offs.</li>
+<li><a href="idea-0005-succession-replaceability.html">Idea 0005: Succession &amp; replaceability</a> —
 founder-exit by design; new-generation ownership.</li>
 <li><a href="idea-0006-tooling-sandbox-reversibility.html">Idea 0006: Tooling sandbox &amp; reversibility</a>
-â€” GitHub low-policy field â†” guaranteed switch-back to Azure DevOps.</li>
+— GitHub low-policy field ? guaranteed switch-back to Azure DevOps.</li>
 <li><a href="idea-0007-beacon-vs-substance-guardrail.html">Idea 0007: Beacon vs. substance guardrail</a>
-â€” experimental field for agentic work without harming deliverable substance.</li>
+— experimental field for agentic work without harming deliverable substance.</li>
 <li><a href="idea-0008-relationship-to-the-josyn-field.html">Idea 0008: Relationship to the josyn field</a>
-â€” inherit vs. re-open the existing platform/builder substance.</li>
+— inherit vs. re-open the existing platform/builder substance.</li>
 </ul>
 <p><strong>Why these axes:</strong> each is separately decidable (each can become one ADR), but none
 captures the whole; together they map the shift from an individual speed-boat to a

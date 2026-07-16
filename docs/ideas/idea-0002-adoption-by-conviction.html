@@ -1,11 +1,42 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Idea 0002: Adoption by conviction â€” josyn-project-setup</title>
+  <title>Idea 0002: Adoption by conviction — josyn-project-setup</title>
   <link rel="stylesheet" href="../site.css">
   <script>var _sw=localStorage.getItem('sidebar-w');if(_sw)document.documentElement.style.setProperty('--sidebar-w',_sw);</script>
+<!-- josyn-access-gate:start -->
+<style id="jgate-hide">body{display:none !important;}</style>
+<script>
+(function(){
+  var KEY='josyn-gate', PW='josyn';
+  function removeHide(){var s=document.getElementById('jgate-hide');if(s)s.parentNode.removeChild(s);}
+  function unlock(){removeHide();var o=document.getElementById('jgate');if(o)o.parentNode.removeChild(o);}
+  if(sessionStorage.getItem(KEY)==='1'){removeHide();return;}
+  function build(){
+    var o=document.createElement('div');o.id='jgate';
+    o.style.cssText='position:fixed;inset:0;z-index:99999;background:#1e1e1e;color:#eee;display:flex;align-items:center;justify-content:center;font-family:system-ui,Segoe UI,sans-serif';
+    o.innerHTML='<form id="jgf" style="text-align:center;max-width:20rem">'
+      +'<h2 style="font-weight:600;margin:0 0 .5rem">Protected</h2>'
+      +'<p style="margin:0 0 1rem;opacity:.8">Enter the password to continue.</p>'
+      +'<input id="jgi" type="password" autocomplete="current-password" autofocus '
+      +'style="padding:.55rem .7rem;font-size:1rem;border-radius:6px;border:1px solid #555;background:#2a2a2a;color:#eee;width:100%;box-sizing:border-box">'
+      +'<div id="jge" style="color:#e66;height:1.2em;margin-top:.6rem;font-size:.9rem"></div>'
+      +'</form>';
+    document.body.appendChild(o);
+    removeHide();
+    var i=document.getElementById('jgi');if(i)i.focus();
+    document.getElementById('jgf').addEventListener('submit',function(e){
+      e.preventDefault();
+      if(document.getElementById('jgi').value===PW){sessionStorage.setItem(KEY,'1');unlock();}
+      else{document.getElementById('jge').textContent='Wrong password';document.getElementById('jgi').value='';document.getElementById('jgi').focus();}
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',build);else build();
+})();
+</script>
+<!-- josyn-access-gate:end -->
 </head>
 <body>
   <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
@@ -38,7 +69,7 @@
 <li>Tags: culture, change-management, psychology</li>
 </ul>
 <h2 id="the-axis">The axis</h2>
-<p>The non-negotiables â€” <strong>agentic</strong> and <strong>decision-driven</strong> â€” must be adopted by
+<p>The non-negotiables — <strong>agentic</strong> and <strong>decision-driven</strong> — must be adopted by
 <strong>genuine conviction, not decree</strong>. The task is to <em>win buy-in</em>, across two very
 different audiences:</p>
 <ul>
@@ -50,10 +81,10 @@ aligned).</li>
 <h2 id="why-it-matters">Why it matters</h2>
 <p>The driver <em>can</em> have the last word but does not want anyone overruled or left
 unconvinced. A culture adopted <strong>by reason</strong> is the only kind that survives the
-founder's eventual exit â€” imposed practice would collapse the moment he steps back.</p>
+founder's eventual exit — imposed practice would collapse the moment he steps back.</p>
 <h2 id="open-questions-seed">Open questions (seed)</h2>
 <ul>
-<li>What actually convinces each audience â€” evidence, demonstration, participation?</li>
+<li>What actually convinces each audience — evidence, demonstration, participation?</li>
 <li>How to demonstrate value early without over-promising?</li>
 <li>What to do with a peer who stays genuinely unconvinced?</li>
 <li>What is the right pace and sequence of adoption?</li>

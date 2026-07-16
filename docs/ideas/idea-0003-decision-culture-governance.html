@@ -1,11 +1,42 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Idea 0003: Decision culture &amp; governance â€” josyn-project-setup</title>
+  <title>Idea 0003: Decision culture &amp; governance — josyn-project-setup</title>
   <link rel="stylesheet" href="../site.css">
   <script>var _sw=localStorage.getItem('sidebar-w');if(_sw)document.documentElement.style.setProperty('--sidebar-w',_sw);</script>
+<!-- josyn-access-gate:start -->
+<style id="jgate-hide">body{display:none !important;}</style>
+<script>
+(function(){
+  var KEY='josyn-gate', PW='josyn';
+  function removeHide(){var s=document.getElementById('jgate-hide');if(s)s.parentNode.removeChild(s);}
+  function unlock(){removeHide();var o=document.getElementById('jgate');if(o)o.parentNode.removeChild(o);}
+  if(sessionStorage.getItem(KEY)==='1'){removeHide();return;}
+  function build(){
+    var o=document.createElement('div');o.id='jgate';
+    o.style.cssText='position:fixed;inset:0;z-index:99999;background:#1e1e1e;color:#eee;display:flex;align-items:center;justify-content:center;font-family:system-ui,Segoe UI,sans-serif';
+    o.innerHTML='<form id="jgf" style="text-align:center;max-width:20rem">'
+      +'<h2 style="font-weight:600;margin:0 0 .5rem">Protected</h2>'
+      +'<p style="margin:0 0 1rem;opacity:.8">Enter the password to continue.</p>'
+      +'<input id="jgi" type="password" autocomplete="current-password" autofocus '
+      +'style="padding:.55rem .7rem;font-size:1rem;border-radius:6px;border:1px solid #555;background:#2a2a2a;color:#eee;width:100%;box-sizing:border-box">'
+      +'<div id="jge" style="color:#e66;height:1.2em;margin-top:.6rem;font-size:.9rem"></div>'
+      +'</form>';
+    document.body.appendChild(o);
+    removeHide();
+    var i=document.getElementById('jgi');if(i)i.focus();
+    document.getElementById('jgf').addEventListener('submit',function(e){
+      e.preventDefault();
+      if(document.getElementById('jgi').value===PW){sessionStorage.setItem(KEY,'1');unlock();}
+      else{document.getElementById('jge').textContent='Wrong password';document.getElementById('jgi').value='';document.getElementById('jgi').focus();}
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',build);else build();
+})();
+</script>
+<!-- josyn-access-gate:end -->
 </head>
 <body>
   <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
@@ -38,7 +69,7 @@
 <li>Tags: governance, decision-driven, culture</li>
 </ul>
 <h2 id="the-axis">The axis</h2>
-<p>How the team <strong>makes and accepts decisions</strong> â€” &quot;<strong>by reason, not by boss</strong>&quot;. The
+<p>How the team <strong>makes and accepts decisions</strong> — &quot;<strong>by reason, not by boss</strong>&quot;. The
 decision-trail method is the shared instrument; the question is how it becomes <em>the
 team's</em>, not the founder's: who accepts an ADR, how disagreement is resolved by
 argument, and how the driver's &quot;last word&quot; stays a rare exception rather than a rule.</p>
@@ -48,10 +79,10 @@ to authority, the agentic/decision-driven ambition is hollow. The mechanism must
 the best argument win and leave a legible trail.</p>
 <h2 id="open-questions-seed">Open questions (seed)</h2>
 <ul>
-<li>Who holds acceptance authority for a decision â€” an owner, a quorum, consensus?</li>
+<li>Who holds acceptance authority for a decision — an owner, a quorum, consensus?</li>
 <li>How is a genuine disagreement escalated and resolved by reason?</li>
 <li>When (if ever) is the driver's last word legitimately used, and how is that bounded?</li>
-<li>How do we keep the trail honest â€” decisions recorded, not retrofitted?</li>
+<li>How do we keep the trail honest — decisions recorded, not retrofitted?</li>
 </ul>
 
     </article>
