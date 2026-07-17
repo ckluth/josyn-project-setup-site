@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADR-0005: Roles, responsibilities &amp; staffing — josyn-project-setup</title>
+  <link rel="stylesheet" href="../site.css">
+  <script>var _sw=localStorage.getItem('sidebar-w');if(_sw)document.documentElement.style.setProperty('--sidebar-w',_sw);</script>
+</head>
+<body>
+  <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  <div id="nav-backdrop"></div>
+  <nav id="sidebar">
+    <div class="nav-header">josyn-project-setup</div>
+    <a href="../index.html" class="nav-home">Home</a>
+<details>
+  <summary class="nav-section">Ideas</summary>
+  <a href="../ideas/index.html" class="nav-link">Overview</a>
+<a href="../ideas/idea-0001-found-the-collaborative-decision-driven-agentic-way-of-working.html" class="nav-link">Idea 0001: Found the collaborative, decision-driven agentic way of working</a>
+<a href="../ideas/idea-0002-adoption-by-conviction.html" class="nav-link">Idea 0002: Adoption by conviction</a>
+<a href="../ideas/idea-0003-decision-culture-governance.html" class="nav-link">Idea 0003: Decision culture &amp; governance</a>
+<a href="../ideas/idea-0004-collaborative-way-of-working.html" class="nav-link">Idea 0004: Collaborative way-of-working</a>
+<a href="../ideas/idea-0005-succession-replaceability.html" class="nav-link">Idea 0005: Succession &amp; replaceability</a>
+<a href="../ideas/idea-0006-tooling-sandbox-reversibility.html" class="nav-link">Idea 0006: Tooling sandbox &amp; reversibility</a>
+<a href="../ideas/idea-0007-beacon-vs-substance-guardrail.html" class="nav-link">Idea 0007: Beacon vs. substance guardrail</a>
+<a href="../ideas/idea-0008-relationship-to-the-josyn-field.html" class="nav-link">Idea 0008: Relationship to the josyn field</a>
+<a href="../ideas/idea-0009-project-progress.html" class="nav-link">Idea 0009: Project progress</a>
+<a href="../ideas/idea-0010-roles-responsibilities-staffing.html" class="nav-link">Idea 0010: Roles, responsibilities &amp; staffing</a>
+</details>
+<details open>
+  <summary class="nav-section">Proposed Decisions</summary>
+  <a href="index.html" class="nav-link">Overview</a>
+<a href="adr-0002-tooling-sandbox-reversibility.html" class="nav-link">ADR-0002: Tooling sandbox &amp; reversibility</a>
+<a href="adr-0003-decision-culture-governance.html" class="nav-link">ADR-0003: Decision culture &amp; governance</a>
+<a href="adr-0004-collaborative-way-of-working.html" class="nav-link">ADR-0004: Collaborative way-of-working</a>
+<a href="adr-0005-roles-responsibilities-staffing.html" class="nav-link active">ADR-0005: Roles, responsibilities &amp; staffing</a>
+</details>
+<details>
+  <summary class="nav-section">Intermediate artifacts</summary>
+  <a href="../intermediate-artifacts/index.html" class="nav-link">Overview</a>
+<a href="../intermediate-artifacts/source-inventory-josyn-platform-sealed-poc.html" class="nav-link">Source inventory — josyn-platform (sealed PoC)</a>
+<a href="../intermediate-artifacts/source-inventory-josyn-builder-follow-up-consolidation-repo.html" class="nav-link">Source inventory — josyn-builder (follow-up consolidation repo)</a>
+</details>
+<a href="../search/index.html" class="nav-link">Search</a>
+
+  </nav>
+  <div id="sidebar-resizer"></div>
+  <main>
+    <article>
+      <h1 id="adr-0005-roles-responsibilities-staffing">ADR-0005: Roles, responsibilities &amp; staffing</h1>
+<ul>
+<li>Date: 2026-07-17</li>
+<li>Status: proposed</li>
+<li>Promoted from: <a href="../ideas/idea-0010-roles-responsibilities-staffing.html">Idea 0010: Roles, responsibilities &amp; staffing</a></li>
+<li>Tags: roles, responsibility, people, staffing</li>
+</ul>
+<h2 id="context">Context</h2>
+<p>A team practice needs to name <strong>who is responsible for what</strong> — and, concretely, <strong>who
+fills which role</strong>. Two forces pull against each other: stakeholders need a <strong>single
+point of accountability</strong>, while the culture is explicitly <strong>by reason, not by boss</strong>
+(<a href="adr-0003-decision-culture-governance.html">ADR-0003</a>) and the collaboration medium is
+<strong>talking</strong>, not hierarchy (<a href="adr-0004-collaborative-way-of-working.html">ADR-0004</a>). Without
+named roles, responsibility diffuses until no one owns progress or the stakeholder
+relationship; with the <em>wrong</em> naming, the driver quietly becomes a line manager and the
+non-hierarchical intent collapses.</p>
+<p>The concrete situation: responsibility <strong>cumulates in the driver</strong>, who reports to
+stakeholders, maintains project-progress, and keeps the whole coherent — yet is <strong>not a
+team-lead</strong> by title, even though in practice he will act like one. The starting team is
+small and known, so the ADR also records the <strong>concrete staffing</strong> — while treating that
+line-up as a <strong>mutable snapshot</strong>, since roles are stable but the people in them may
+change during the ride.</p>
+<h2 id="decision-drivers">Decision Drivers</h2>
+<ul>
+<li><strong>Single point of accountability</strong> — stakeholders have one address for the project.</li>
+<li><strong>Accountability without hierarchy</strong> — the driver is not a team-lead; decisions stay
+by reason (ADR-0003).</li>
+<li><strong>No diffusion</strong> — every role has a named in-scope / out-scope boundary.</li>
+<li><strong>Consistent with ADR-0004</strong> — roles compose with, and are separable from, the
+repo-operator role.</li>
+<li><strong>Hand-over-ready</strong> — roles are named as roles, so they can transfer (Idea 0005).</li>
+<li><strong>Staffing is mutable</strong> — the concrete line-up must be changeable without re-deciding
+the role model.</li>
+</ul>
+<h2 id="considered-options">Considered Options</h2>
+<ul>
+<li><strong>A — Named roles with one accountable <em>driver</em>, plus a recorded-but-mutable staffing
+snapshot.</strong> Accountability concentrates in a single non-hierarchical role; the rest of
+the team contributes by reason with named scope; concrete names are recorded and freely
+updated.</li>
+<li><strong>B — Collective ownership, no single accountable role.</strong> True to &quot;team by talking&quot;,
+but leaves stakeholders without one address and lets progress-keeping fall between
+chairs.</li>
+<li><strong>C — Make the driver a formal team-lead with line authority.</strong> Simple accountability,
+but installs the hierarchy the culture explicitly rejects (ADR-0003).</li>
+</ul>
+<p><strong>Why A.</strong> It gives stakeholders a single accountable role while keeping authority out of
+the mechanism, and captures today's line-up without freezing it. B has no single address;
+C buys accountability by importing hierarchy.</p>
+<h2 id="proposed-decision">Proposed decision</h2>
+<ol>
+<li><p><strong>The driver — single main responsibility-holder.</strong> One role, the <strong>driver</strong>, carries
+cumulative responsibility. It is <strong>accountable for</strong>: <strong>reporting to stakeholders</strong>,
+<strong>maintaining project-progress</strong>, and <strong>keeping the whole coherent</strong> (&quot;keeping it all
+together&quot;). It is a <strong>role, hand-over-able</strong>, not a person.</p>
+</li>
+<li><p><strong>Not a team-lead — accountability without hierarchy.</strong> The driver holds <strong>no line or
+disciplinary authority</strong>. Decisions remain team consensus by reason with the ADR-0003
+escalation ladder; the driver does <strong>not</strong> get a command shortcut around it. &quot;Acts like
+a lead&quot; means <em>caretaking and integration</em>, never <em>command</em>.</p>
+</li>
+<li><p><strong>Separable from the repo-operator.</strong> The driver <strong>currently also holds</strong> the
+repo-operator / curator role (ADR-0004), but the two are <strong>distinct, independently
+hand-over-able roles</strong>.</p>
+</li>
+<li><p><strong>Roles for the other members.</strong></p>
+<ul>
+<li><strong>Senior</strong> — the experienced architect and JobSystem-Maintainer. In-scope: deep
+domain authority, safeguarding existing substance, reasoning on architecture.</li>
+<li><strong>Associate architects</strong> — the two younger architects, on an <strong>ownership track</strong>
+(growing toward taking roles over, feeding Idea 0005). In-scope: full contribution
+by reason plus deliberate growth into ownership.</li>
+<li>All members are <strong>contributors</strong>: expected to bring domain substance and to shape and
+contest decisions <strong>by talking</strong>. <strong>Out-scope</strong> for non-driver roles: stakeholder
+reporting and repo operation — the driver's, unless <strong>explicitly handed over</strong>.</li>
+</ul>
+</li>
+<li><p><strong>Concrete staffing — a mutable snapshot.</strong> As of this ADR:</p>
+<ul>
+<li><strong>driver</strong> → <strong>CKL</strong></li>
+<li><strong>senior</strong> (experienced architect, JobSystem-Maintainer) → <strong>ORE</strong></li>
+<li><strong>associate architects</strong> (ownership track) → <strong>PKL</strong> and <strong>BWE</strong> <em>(tentative at this
+early point)</em></li>
+</ul>
+<p>This staffing is <strong>explicitly changeable during the ride</strong>: updating who fills a role
+is a lightweight edit to this line-up, <strong>not</strong> a re-decision of the role model — it
+does not require a new ADR, only the curator recording the change. Role <em>definitions</em>
+change through the normal ADR flow; role <em>occupancy</em> does not.</p>
+</li>
+<li><p><strong>Scope lines are explicit but light.</strong> A role's in/out-scope boundary is <strong>named when
+it matters</strong> and refined by talking — no exhaustive RACI up front.</p>
+</li>
+</ol>
+<h2 id="consequences">Consequences</h2>
+<ul>
+<li>Stakeholders address one accountable role; progress and coherence always have an owner,
+so responsibility cannot diffuse.</li>
+<li>Because the driver holds no line authority, accountability does not become hierarchy,
+keeping ADR-0003's &quot;by reason&quot; intact — the cost is that the driver <em>carries</em> weight he
+cannot <em>command</em> away, relying on conviction (Idea 0002).</li>
+<li>The recorded staffing makes today's line-up legible, while its declared mutability keeps
+the trail honest as people change — and separating role <em>definition</em> from role
+<em>occupancy</em> means routine staffing changes stay cheap.</li>
+<li>Naming roles as separable, hand-over-able roles makes the succession hand-over
+(Idea 0005) mechanical rather than personal, and clarifies who <strong>maintains progress</strong>
+under <a href="../ideas/idea-0009-project-progress.html">Idea 0009</a>.</li>
+<li>The <strong>associate architects</strong> name is a working label; if a better neutral term emerges,
+it is changed by talking. The PKL/BWE assignment is <strong>tentative</strong> and expected to firm
+up as the team forms.</li>
+</ul>
+
+    </article>
+  </main>
+  <script>
+    var toggle   = document.getElementById('nav-toggle');
+    var backdrop = document.getElementById('nav-backdrop');
+    function closeNav() { document.body.classList.remove('nav-open'); }
+    toggle.addEventListener('click', function() {
+      document.body.classList.toggle('nav-open');
+    });
+    backdrop.addEventListener('click', closeNav);
+    document.querySelectorAll('#sidebar a').forEach(function(a) {
+      a.addEventListener('click', closeNav);
+    });
+
+    var resizer = document.getElementById('sidebar-resizer');
+    var resizeW = null;
+    resizer.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    resizer.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      document.addEventListener('mousemove', onResize);
+      document.addEventListener('mouseup', stopResize);
+    });
+    resizer.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      document.addEventListener('touchmove', onTouchResize, { passive: false });
+      document.addEventListener('touchend', stopTouchResize);
+    }, { passive: false });
+    function onResize(e) {
+      resizeW = Math.max(160, Math.min(600, e.clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function onTouchResize(e) {
+      e.preventDefault();
+      resizeW = Math.max(160, Math.min(600, e.touches[0].clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function stopResize() {
+      document.removeEventListener('mousemove', onResize);
+      document.removeEventListener('mouseup', stopResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+    function stopTouchResize() {
+      document.removeEventListener('touchmove', onTouchResize);
+      document.removeEventListener('touchend', stopTouchResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+  </script>
+  <script src="../mermaid.min.js"></script><script>mermaid.initialize({startOnLoad:false,theme:'dark'});mermaid.run({querySelector:'.mermaid'});</script>
+</body>
+</html>

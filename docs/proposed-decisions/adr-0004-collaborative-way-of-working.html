@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADR-0004: Collaborative way-of-working — josyn-project-setup</title>
+  <link rel="stylesheet" href="../site.css">
+  <script>var _sw=localStorage.getItem('sidebar-w');if(_sw)document.documentElement.style.setProperty('--sidebar-w',_sw);</script>
+</head>
+<body>
+  <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  <div id="nav-backdrop"></div>
+  <nav id="sidebar">
+    <div class="nav-header">josyn-project-setup</div>
+    <a href="../index.html" class="nav-home">Home</a>
+<details>
+  <summary class="nav-section">Ideas</summary>
+  <a href="../ideas/index.html" class="nav-link">Overview</a>
+<a href="../ideas/idea-0001-found-the-collaborative-decision-driven-agentic-way-of-working.html" class="nav-link">Idea 0001: Found the collaborative, decision-driven agentic way of working</a>
+<a href="../ideas/idea-0002-adoption-by-conviction.html" class="nav-link">Idea 0002: Adoption by conviction</a>
+<a href="../ideas/idea-0003-decision-culture-governance.html" class="nav-link">Idea 0003: Decision culture &amp; governance</a>
+<a href="../ideas/idea-0004-collaborative-way-of-working.html" class="nav-link">Idea 0004: Collaborative way-of-working</a>
+<a href="../ideas/idea-0005-succession-replaceability.html" class="nav-link">Idea 0005: Succession &amp; replaceability</a>
+<a href="../ideas/idea-0006-tooling-sandbox-reversibility.html" class="nav-link">Idea 0006: Tooling sandbox &amp; reversibility</a>
+<a href="../ideas/idea-0007-beacon-vs-substance-guardrail.html" class="nav-link">Idea 0007: Beacon vs. substance guardrail</a>
+<a href="../ideas/idea-0008-relationship-to-the-josyn-field.html" class="nav-link">Idea 0008: Relationship to the josyn field</a>
+<a href="../ideas/idea-0009-project-progress.html" class="nav-link">Idea 0009: Project progress</a>
+<a href="../ideas/idea-0010-roles-responsibilities-staffing.html" class="nav-link">Idea 0010: Roles, responsibilities &amp; staffing</a>
+</details>
+<details open>
+  <summary class="nav-section">Proposed Decisions</summary>
+  <a href="index.html" class="nav-link">Overview</a>
+<a href="adr-0002-tooling-sandbox-reversibility.html" class="nav-link">ADR-0002: Tooling sandbox &amp; reversibility</a>
+<a href="adr-0003-decision-culture-governance.html" class="nav-link">ADR-0003: Decision culture &amp; governance</a>
+<a href="adr-0004-collaborative-way-of-working.html" class="nav-link active">ADR-0004: Collaborative way-of-working</a>
+<a href="adr-0005-roles-responsibilities-staffing.html" class="nav-link">ADR-0005: Roles, responsibilities &amp; staffing</a>
+</details>
+<details>
+  <summary class="nav-section">Intermediate artifacts</summary>
+  <a href="../intermediate-artifacts/index.html" class="nav-link">Overview</a>
+<a href="../intermediate-artifacts/source-inventory-josyn-platform-sealed-poc.html" class="nav-link">Source inventory — josyn-platform (sealed PoC)</a>
+<a href="../intermediate-artifacts/source-inventory-josyn-builder-follow-up-consolidation-repo.html" class="nav-link">Source inventory — josyn-builder (follow-up consolidation repo)</a>
+</details>
+<a href="../search/index.html" class="nav-link">Search</a>
+
+  </nav>
+  <div id="sidebar-resizer"></div>
+  <main>
+    <article>
+      <h1 id="adr-0004-collaborative-way-of-working">ADR-0004: Collaborative way-of-working</h1>
+<ul>
+<li>Date: 2026-07-17</li>
+<li>Status: proposed</li>
+<li>Promoted from: <a href="../ideas/idea-0004-collaborative-way-of-working.html">Idea 0004: Collaborative way-of-working</a></li>
+<li>Tags: collaboration, method</li>
+</ul>
+<h2 id="context">Context</h2>
+<p>The decision-trail practice and the josyn substance were built <strong>solo</strong>. Turning a
+one-person trail into a <strong>team</strong> practice needs mechanics — but the danger is
+over-engineering them. Explicit PRs, issues, and branch protocols are overhead the
+method's Economy promise cannot afford, and they mistake <em>tooling ceremony</em> for
+<em>collaboration</em>. The team's real medium is <strong>talking</strong>.</p>
+<p>Two prior decisions frame this. <a href="adr-0002-tooling-sandbox-reversibility.html">ADR-0002</a>
+put the work on <strong>GitHub</strong> as the reversible sandbox. <a href="adr-0003-decision-culture-governance.html">ADR-0003</a>
+settled <strong>who accepts</strong> a decision — team consensus by reason, with a bounded
+escalation ladder. This ADR is the operational complement: the <em>day-to-day how</em>, kept
+deliberately lightweight. The one thing that must <strong>not</strong> be lightweight is the moment
+a proposal becomes binding — an ADR must <strong>never switch from <code>proposed</code> to <code>accepted</code>
+silently</strong>.</p>
+<h2 id="decision-drivers">Decision Drivers</h2>
+<ul>
+<li><strong>Talking is the collaboration</strong> — the trail records reasoning, it is not itself the
+review mechanism.</li>
+<li><strong>Lightweight</strong> — no PRs, no GitHub issues, no branch choreography; mechanics cheap
+enough to actually be followed (the Economy promise).</li>
+<li><strong>No silent acceptance</strong> — the <code>proposed → accepted</code> flip must be a deliberate,
+visible, attributable act, never slipped in.</li>
+<li><strong>Portable</strong> — rides on plain git primitives, so a switch-back per ADR-0002 loses
+nothing.</li>
+<li><strong>No key-person lock-in</strong> — the operating role is transferable, supporting the
+succession aim (Idea 0005).</li>
+<li><strong>True agile</strong> — as a matter of course, the way of working is genuinely agile
+(adaptive, incremental, feedback-driven), not agile ritual or cargo-cult ceremony.</li>
+</ul>
+<h2 id="considered-options">Considered Options</h2>
+<ul>
+<li><strong>A — Single curator on <code>main</code>, talk as the review, acceptance the one guarded
+act.</strong> One person holds the pen and commits directly to <code>main</code>; the team decides by
+talking; the only ceremonially-visible transition is accepting an ADR.</li>
+<li><strong>B — PR-based trail</strong> (branches + pull-request review as the gate). A real review
+surface, but PRs are overhead and cast tooling as the collaboration medium —
+rejected as too heavy and mis-framed.</li>
+<li><strong>C — Direct commits with no guarded transition at all.</strong> Maximally cheap, but lets
+an ADR slide to <code>accepted</code> invisibly — the one thing we must prevent.</li>
+</ul>
+<p><strong>Why A.</strong> It keeps everything cheap and puts the <em>only</em> ceremony exactly where
+bindingness is conferred. B pays PR overhead for a gate the conversation already
+provides; C is cheap but loses the no-silent-acceptance guarantee.</p>
+<h2 id="proposed-decision">Proposed decision</h2>
+<ol>
+<li><p><strong>Repo-operator is a role, not a person.</strong> One <strong>repo-operator / curator</strong> holds
+the pen — the single point that writes to the repo and commits the trail. It is a
+<strong>role, explicitly handed over</strong> as needed, never bound to an individual; it starts
+with the <strong>driver</strong>. There are no per-artifact owners and no assigned reviewers.</p>
+</li>
+<li><p><strong>Communication is the collaboration.</strong> The team works by <strong>talking</strong> — in
+conversation, not through the tooling. The curator records the outcome of those
+conversations into the trail; what the talk weighed is captured in each ADR's
+<strong>Decision Drivers</strong> / <strong>Considered Options</strong> (ADR-0003, best argument wins).
+Anyone can raise, shape, or contest a thought by talking; the pen simply serializes
+the result.</p>
+</li>
+<li><p><strong>Main-only. No branches, no PRs, no GitHub issues.</strong> The curator commits directly
+to <code>main</code>; each commit is one coherent trail move. With a single operator on a
+single branch, ordinal collisions and parallel-edit clobbering cannot arise — the
+curator <em>is</em> the serialization point, so no branch or locking machinery is needed.</p>
+</li>
+<li><p><strong>The one hard rule — no silent acceptance.</strong> <code>proposed → accepted</code> is never a
+quiet inline edit. Accepting an ADR must be visible three ways at once:</p>
+<ul>
+<li>a <strong>dedicated, atomic commit</strong> that does nothing else, message <code>accept ADR-NNNN</code>;</li>
+<li>the <strong>status flip and heading rename</strong> together in that commit
+(<code>## Proposed decision</code> → <code>## Decision</code>);</li>
+<li>an <strong>acceptance record</strong> in the ADR: the date, that team consensus was reached
+(or which escalation rung per ADR-0003 was used), and who accepted.</li>
+</ul>
+<p>Every other transition — drafting an idea, editing a proposal, writing or advancing
+a plan — stays a free-flowing lightweight commit. Acceptance is the <strong>only</strong> guarded
+act.</p>
+</li>
+<li><p><strong>True agile, as a matter of course.</strong> The way of working is genuinely agile —
+adaptive, incremental, and feedback-driven — not agile ritual or cargo-cult
+ceremony. Any thread stays refinable or overthrowable at any time (the method's
+Agility promise); we optimise for real feedback over process theatre.</p>
+</li>
+</ol>
+<h2 id="consequences">Consequences</h2>
+<ul>
+<li>Collaboration cost drops to near zero: no PRs, no issues, no branches — just talking
+and a curator recording the trail on <code>main</code>.</li>
+<li>The trail cannot silently harden: an ADR reaching <code>accepted</code> always leaves a
+dedicated commit, a heading rename, and a named acceptance record, so the binding
+moment is greppable and honest — implementing ADR-0003's team acceptance concretely.</li>
+<li>Because the mechanics ride on plain git, a switch-back per ADR-0002 loses no method
+substance.</li>
+<li>The single-operator model has an availability cost (the trail advances only when the
+curator writes), accepted deliberately in exchange for simplicity; the role's
+hand-over-ability keeps it from becoming key-person lock-in (Idea 0005).</li>
+<li>This ADR sets the <strong>operating model</strong>; finer texture (how hand-over of the
+repo-operator role is signalled, what a &quot;coherent trail move&quot; looks like in edge
+cases) is refined by talking as the practice matures.</li>
+</ul>
+
+    </article>
+  </main>
+  <script>
+    var toggle   = document.getElementById('nav-toggle');
+    var backdrop = document.getElementById('nav-backdrop');
+    function closeNav() { document.body.classList.remove('nav-open'); }
+    toggle.addEventListener('click', function() {
+      document.body.classList.toggle('nav-open');
+    });
+    backdrop.addEventListener('click', closeNav);
+    document.querySelectorAll('#sidebar a').forEach(function(a) {
+      a.addEventListener('click', closeNav);
+    });
+
+    var resizer = document.getElementById('sidebar-resizer');
+    var resizeW = null;
+    resizer.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    resizer.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      document.addEventListener('mousemove', onResize);
+      document.addEventListener('mouseup', stopResize);
+    });
+    resizer.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      document.addEventListener('touchmove', onTouchResize, { passive: false });
+      document.addEventListener('touchend', stopTouchResize);
+    }, { passive: false });
+    function onResize(e) {
+      resizeW = Math.max(160, Math.min(600, e.clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function onTouchResize(e) {
+      e.preventDefault();
+      resizeW = Math.max(160, Math.min(600, e.touches[0].clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function stopResize() {
+      document.removeEventListener('mousemove', onResize);
+      document.removeEventListener('mouseup', stopResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+    function stopTouchResize() {
+      document.removeEventListener('touchmove', onTouchResize);
+      document.removeEventListener('touchend', stopTouchResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+  </script>
+  <script src="../mermaid.min.js"></script><script>mermaid.initialize({startOnLoad:false,theme:'dark'});mermaid.run({querySelector:'.mermaid'});</script>
+</body>
+</html>

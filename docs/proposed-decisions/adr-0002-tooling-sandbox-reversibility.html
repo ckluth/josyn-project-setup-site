@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADR-0002: Tooling sandbox &amp; reversibility — josyn-project-setup</title>
+  <link rel="stylesheet" href="../site.css">
+  <script>var _sw=localStorage.getItem('sidebar-w');if(_sw)document.documentElement.style.setProperty('--sidebar-w',_sw);</script>
+</head>
+<body>
+  <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  <div id="nav-backdrop"></div>
+  <nav id="sidebar">
+    <div class="nav-header">josyn-project-setup</div>
+    <a href="../index.html" class="nav-home">Home</a>
+<details>
+  <summary class="nav-section">Ideas</summary>
+  <a href="../ideas/index.html" class="nav-link">Overview</a>
+<a href="../ideas/idea-0001-found-the-collaborative-decision-driven-agentic-way-of-working.html" class="nav-link">Idea 0001: Found the collaborative, decision-driven agentic way of working</a>
+<a href="../ideas/idea-0002-adoption-by-conviction.html" class="nav-link">Idea 0002: Adoption by conviction</a>
+<a href="../ideas/idea-0003-decision-culture-governance.html" class="nav-link">Idea 0003: Decision culture &amp; governance</a>
+<a href="../ideas/idea-0004-collaborative-way-of-working.html" class="nav-link">Idea 0004: Collaborative way-of-working</a>
+<a href="../ideas/idea-0005-succession-replaceability.html" class="nav-link">Idea 0005: Succession &amp; replaceability</a>
+<a href="../ideas/idea-0006-tooling-sandbox-reversibility.html" class="nav-link">Idea 0006: Tooling sandbox &amp; reversibility</a>
+<a href="../ideas/idea-0007-beacon-vs-substance-guardrail.html" class="nav-link">Idea 0007: Beacon vs. substance guardrail</a>
+<a href="../ideas/idea-0008-relationship-to-the-josyn-field.html" class="nav-link">Idea 0008: Relationship to the josyn field</a>
+<a href="../ideas/idea-0009-project-progress.html" class="nav-link">Idea 0009: Project progress</a>
+<a href="../ideas/idea-0010-roles-responsibilities-staffing.html" class="nav-link">Idea 0010: Roles, responsibilities &amp; staffing</a>
+</details>
+<details open>
+  <summary class="nav-section">Proposed Decisions</summary>
+  <a href="index.html" class="nav-link">Overview</a>
+<a href="adr-0002-tooling-sandbox-reversibility.html" class="nav-link active">ADR-0002: Tooling sandbox &amp; reversibility</a>
+<a href="adr-0003-decision-culture-governance.html" class="nav-link">ADR-0003: Decision culture &amp; governance</a>
+<a href="adr-0004-collaborative-way-of-working.html" class="nav-link">ADR-0004: Collaborative way-of-working</a>
+<a href="adr-0005-roles-responsibilities-staffing.html" class="nav-link">ADR-0005: Roles, responsibilities &amp; staffing</a>
+</details>
+<details>
+  <summary class="nav-section">Intermediate artifacts</summary>
+  <a href="../intermediate-artifacts/index.html" class="nav-link">Overview</a>
+<a href="../intermediate-artifacts/source-inventory-josyn-platform-sealed-poc.html" class="nav-link">Source inventory — josyn-platform (sealed PoC)</a>
+<a href="../intermediate-artifacts/source-inventory-josyn-builder-follow-up-consolidation-repo.html" class="nav-link">Source inventory — josyn-builder (follow-up consolidation repo)</a>
+</details>
+<a href="../search/index.html" class="nav-link">Search</a>
+
+  </nav>
+  <div id="sidebar-resizer"></div>
+  <main>
+    <article>
+      <h1 id="adr-0002-tooling-sandbox-reversibility">ADR-0002: Tooling sandbox &amp; reversibility</h1>
+<ul>
+<li>Date: 2026-07-17</li>
+<li>Status: proposed</li>
+<li>Promoted from: <a href="../ideas/idea-0006-tooling-sandbox-reversibility.html">Idea 0006: Tooling sandbox &amp; reversibility</a></li>
+<li>Tags: tooling, policy, reversibility</li>
+</ul>
+<h2 id="context">Context</h2>
+<p>The project's &quot;new way&quot; runs on <strong>GitHub</strong>, deliberately free of policy-burden — a
+low-friction, experimental field that makes agentic ways of working feasible. That
+freedom is only <em>acceptable</em> to the organization because a <strong>switch back to the
+Azure DevOps corporate standard</strong> (work items, pipelines, standard policy) stays
+guaranteed. Reversibility is therefore a <strong>hard constraint</strong>, not an afterthought.</p>
+<p>For that guarantee to hold, &quot;reversible&quot; needs a definition sharp enough to <em>gate</em>
+tooling choices rather than merely inspire them.</p>
+<p><strong>Portable</strong> — the term the constraint rests on — means: an artifact's
+authoritative content and history survive a move to Azure DevOps <strong>without loss of
+meaning</strong>, using only a <strong>mechanical (non-reconstructive) transformation</strong>. An asset
+is portable when:</p>
+<ol>
+<li><strong>Its source of truth is medium-neutral</strong> — plain files in a git repository
+(decision-trail markdown, code, configuration), not locked inside a GitHub-only
+surface (Issues, Projects, Discussions, wiki-as-database).</li>
+<li><strong>The switch-back is a re-mapping, not a rewrite</strong> — moving it to the Azure
+DevOps equivalent is a deterministic transform of existing content, not a
+&quot;reconstruct the reasoning from memory&quot; exercise.</li>
+<li><strong>History travels with it</strong> — the decision trail (why / when) already lives in
+commits and markdown, independent of the hosting platform.</li>
+</ol>
+<h2 id="decision-drivers">Decision Drivers</h2>
+<ul>
+<li>The low-policy sandbox is what makes agentic experimentation feasible.</li>
+<li>The guaranteed return path is what makes the sandbox organizationally acceptable.</li>
+<li>The switch-back must be <strong>low-effort</strong> — feasible on demand, not a heroic project.</li>
+</ul>
+<h2 id="considered-options">Considered Options</h2>
+<ul>
+<li><strong>A — All relevant content lives in the repos; tooling is not authoritative.</strong>
+Docs and code are the source of truth in git; any platform feature is a
+disposable view over them.</li>
+<li><strong>B — Use GitHub's proprietary surfaces (Issues, Projects) as the authoritative
+tracker,</strong> and rely on export/API migration if a switch-back is ever needed.</li>
+<li><strong>C — Soft preference for portability,</strong> allowing case-by-case exceptions where a
+proprietary feature is convenient.</li>
+</ul>
+<p><strong>Why not B.</strong> Making GitHub Issues + Projects the authoritative work-item tracker
+fails all three portability tests: the authoritative state (statuses, custom
+fields, board columns, comment history, automation) lives inside GitHub's database;
+the switch-back becomes a <em>rewrite</em> (custom-field semantics and automation have no
+deterministic 1:1 transform to Azure Boards); and issue timelines / label history
+never travel in commits. That is exactly the irreversible divergence the constraint
+exists to prevent.</p>
+<p><strong>Why not C.</strong> A soft preference cannot <em>gate</em> choices — under low effort and
+convenience pressure, exceptions accumulate until the return path quietly erodes.
+Reversibility only stays a guarantee if it is a hard line.</p>
+<h2 id="proposed-decision">Proposed decision</h2>
+<p>Reversibility is a <strong>hard constraint</strong>. Concretely:</p>
+<ol>
+<li><strong>All relevant content — docs and code — lives in the git repositories.</strong> The
+repos are the single source of truth. Anything that matters to the project's
+decisions, work, or execution is a file in a repo. Concretely, these are
+<strong>private repositories under the <a href="https://github.com/haevg-rz"><code>haevg-rz</code></a>
+GitHub organization</strong>.</li>
+<li><strong>No tooling-choice binding.</strong> No platform-proprietary surface may become the
+authoritative record of anything relevant. Platform features (GitHub Issues,
+Projects, etc.) are permitted only as <strong>disposable views</strong> over repo content,
+never as the source of truth.</li>
+<li><strong>A clean, low-effort switch to Azure DevOps must always be possible,</strong> carrying
+all relevant content. Because the authoritative state is portable by
+construction, the switch-back stays a <strong>mechanical re-mapping</strong> (markdown and
+pipeline-as-code re-mapped to work items and Azure Pipelines), not a
+reconstruction.</li>
+</ol>
+<p>Every tooling choice is tested against this line: <em>if it were removed tomorrow,
+does all relevant content still survive in the repos and re-map mechanically to
+Azure DevOps?</em> If not, the choice is not allowed to hold authoritative state.</p>
+<h2 id="consequences">Consequences</h2>
+<ul>
+<li>The decision-trail markdown under <code>docs/</code> and the project's code are, by design,
+on the portable side of the line — this project already works this way.</li>
+<li>Pipeline-as-code (<code>.github/workflows/*.yml</code>) is acceptable: proprietary syntax,
+but plain files in the repo that re-map mechanically to Azure Pipelines YAML.</li>
+<li>GitHub Issues / Projects and similar surfaces may be used for convenience but must
+never be the authoritative record; their loss must cost nothing that isn't
+already in a repo.</li>
+<li>This ADR decides the <strong>principle</strong>. The concrete Azure DevOps <strong>mapping</strong>
+(which repo artifacts become which work items / pipelines, and the switch-back
+runbook) is left to a follow-up decision and its plan.</li>
+<li><strong>The switch-back is planned as a milestone criterion, not now.</strong> Its <em>trigger</em> —
+at which milestone, or under which conditions, the switch becomes due — belongs to
+the project's phase/milestone framing in
+<a href="../ideas/idea-0009-project-progress.html">Idea 0009: Project progress</a>, where it is
+surfaced deliberately and <strong>not planned at this time</strong>.</li>
+</ul>
+
+    </article>
+  </main>
+  <script>
+    var toggle   = document.getElementById('nav-toggle');
+    var backdrop = document.getElementById('nav-backdrop');
+    function closeNav() { document.body.classList.remove('nav-open'); }
+    toggle.addEventListener('click', function() {
+      document.body.classList.toggle('nav-open');
+    });
+    backdrop.addEventListener('click', closeNav);
+    document.querySelectorAll('#sidebar a').forEach(function(a) {
+      a.addEventListener('click', closeNav);
+    });
+
+    var resizer = document.getElementById('sidebar-resizer');
+    var resizeW = null;
+    resizer.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    resizer.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      document.addEventListener('mousemove', onResize);
+      document.addEventListener('mouseup', stopResize);
+    });
+    resizer.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      document.addEventListener('touchmove', onTouchResize, { passive: false });
+      document.addEventListener('touchend', stopTouchResize);
+    }, { passive: false });
+    function onResize(e) {
+      resizeW = Math.max(160, Math.min(600, e.clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function onTouchResize(e) {
+      e.preventDefault();
+      resizeW = Math.max(160, Math.min(600, e.touches[0].clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function stopResize() {
+      document.removeEventListener('mousemove', onResize);
+      document.removeEventListener('mouseup', stopResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+    function stopTouchResize() {
+      document.removeEventListener('touchmove', onTouchResize);
+      document.removeEventListener('touchend', stopTouchResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+  </script>
+  <script src="../mermaid.min.js"></script><script>mermaid.initialize({startOnLoad:false,theme:'dark'});mermaid.run({querySelector:'.mermaid'});</script>
+</body>
+</html>
