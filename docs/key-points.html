@@ -15,6 +15,19 @@
     <a href="index.html" class="nav-home">Home</a>
 <a href="key-points.html" class="nav-link active">Key points</a>
 <details>
+  <summary class="nav-section">Proposed Decisions</summary>
+  <a href="proposed-decisions/index.html" class="nav-link">Overview</a>
+<a href="proposed-decisions/adr-0002-single-source-of-truth-reversibility.html" class="nav-link">ADR-0002: Single source of truth &amp; reversibility</a>
+<a href="proposed-decisions/adr-0003-decision-culture-governance.html" class="nav-link">ADR-0003: Decision culture &amp; governance</a>
+<a href="proposed-decisions/adr-0004-collaborative-way-of-working.html" class="nav-link">ADR-0004: Collaborative way-of-working</a>
+<a href="proposed-decisions/adr-0005-roles-responsibilities-staffing.html" class="nav-link">ADR-0005: Roles, responsibilities &amp; staffing</a>
+<a href="proposed-decisions/adr-0006-adoption-by-conviction.html" class="nav-link">ADR-0006: Adoption by conviction</a>
+<a href="proposed-decisions/adr-0007-succession-replaceability.html" class="nav-link">ADR-0007: Succession &amp; replaceability</a>
+<a href="proposed-decisions/adr-0008-beacon-vs-substance-guardrail.html" class="nav-link">ADR-0008: Beacon vs. substance guardrail</a>
+<a href="proposed-decisions/adr-0009-relationship-to-the-josyn-field.html" class="nav-link">ADR-0009: Relationship to the josyn field</a>
+<a href="proposed-decisions/adr-0010-project-progress.html" class="nav-link">ADR-0010: Project progress</a>
+</details>
+<details>
   <summary class="nav-section">Ideas</summary>
   <a href="ideas/index.html" class="nav-link">Overview</a>
 <a href="ideas/idea-0001-found-the-collaborative-decision-driven-agentic-way-of-working.html" class="nav-link">Idea 0001: Found the collaborative, decision-driven agentic way of working</a>
@@ -27,14 +40,6 @@
 <a href="ideas/idea-0008-relationship-to-the-josyn-field.html" class="nav-link">Idea 0008: Relationship to the josyn field</a>
 <a href="ideas/idea-0009-project-progress.html" class="nav-link">Idea 0009: Project progress</a>
 <a href="ideas/idea-0010-roles-responsibilities-staffing.html" class="nav-link">Idea 0010: Roles, responsibilities &amp; staffing</a>
-</details>
-<details>
-  <summary class="nav-section">Proposed Decisions</summary>
-  <a href="proposed-decisions/index.html" class="nav-link">Overview</a>
-<a href="proposed-decisions/adr-0002-tooling-sandbox-reversibility.html" class="nav-link">ADR-0002: Tooling sandbox &amp; reversibility</a>
-<a href="proposed-decisions/adr-0003-decision-culture-governance.html" class="nav-link">ADR-0003: Decision culture &amp; governance</a>
-<a href="proposed-decisions/adr-0004-collaborative-way-of-working.html" class="nav-link">ADR-0004: Collaborative way-of-working</a>
-<a href="proposed-decisions/adr-0005-roles-responsibilities-staffing.html" class="nav-link">ADR-0005: Roles, responsibilities &amp; staffing</a>
 </details>
 <details>
   <summary class="nav-section">Intermediate artifacts</summary>
@@ -53,18 +58,18 @@
 picture at a glance — one term, one sentence. A quick way in; the ideas and
 decisions themselves remain the source of truth.</p>
 <blockquote>
-<p><strong>Nothing here is settled yet.</strong> Every ADR is still <code>proposed</code>, and the
-Idea rows are earlier still — this is the current <em>thinking</em>, not ratified law.
-A row citing an <strong>ADR</strong> is a worked-through proposal; a row citing an <strong>Idea</strong> is
-a shaping thought not yet even proposed.</p>
+<p><strong>Only the method is settled.</strong> Every substantive axis is now a worked-through
+<strong><code>proposed</code></strong> ADR; the single <code>accepted</code> decision is <a href="../decisions/0001-adopt-decision-trail.md">ADR-0001</a>
+(adopt decision-trail). Each row cites the ADR that carries the thread and the
+<strong>Accepted</strong> column tracks ratification — <code>yes</code> accepted, <code>no</code> still proposed.</p>
 </blockquote>
 <h2 id="vision-culture">Vision &amp; culture</h2>
 <p><em>Why this project exists, and the non-negotiable spirit it runs on.</em></p>
 <table>
 <thead>
 <tr>
-<th>Term</th>
-<th>In one sentence</th>
+<th>Topic</th>
+<th>Abstract</th>
 <th>Source</th>
 <th>Accepted</th>
 </tr>
@@ -73,26 +78,32 @@ a shaping thought not yet even proposed.</p>
 <tr>
 <td>The shift</td>
 <td>The move from an individual speed-boat to a collaborative project, re-deciding the essentials as a team rather than by decree.</td>
-<td><a href="ideas/idea-0001-found-the-collaborative-decision-driven-agentic-way-of-working.html">Idea 0001</a></td>
-<td>-</td>
+<td><a href="proposed-decisions/adr-0004-collaborative-way-of-working.html">ADR-0004</a></td>
+<td>no</td>
 </tr>
 <tr>
 <td>Non-negotiable core</td>
 <td>Two things are not up for debate — the way of working is <strong>agentic</strong> and <strong>decision-driven</strong>.</td>
-<td><a href="ideas/idea-0001-found-the-collaborative-decision-driven-agentic-way-of-working.html">Idea 0001</a></td>
-<td>-</td>
+<td><a href="proposed-decisions/adr-0006-adoption-by-conviction.html">ADR-0006</a></td>
+<td>no</td>
 </tr>
 <tr>
 <td>Adoption by conviction</td>
-<td>The non-negotiables must be won by genuine buy-in across team, peers and authority — convince, never rule.</td>
-<td><a href="ideas/idea-0002-adoption-by-conviction.html">Idea 0002</a></td>
-<td>-</td>
+<td>The non-negotiables are won by genuine buy-in — participation, evidence, and partnership per audience — leading quietly by example, never by decree.</td>
+<td><a href="proposed-decisions/adr-0006-adoption-by-conviction.html">ADR-0006</a></td>
+<td>no</td>
 </tr>
 <tr>
 <td>Beacon &amp; guardrail</td>
 <td>The project is both a deliverable and an experimental beacon for agentic work, yet experimenting must never let the deliverable substance suffer.</td>
-<td><a href="ideas/idea-0007-beacon-vs-substance-guardrail.html">Idea 0007</a></td>
-<td>-</td>
+<td><a href="proposed-decisions/adr-0008-beacon-vs-substance-guardrail.html">ADR-0008</a></td>
+<td>no</td>
+</tr>
+<tr>
+<td>Substance-first fence</td>
+<td>Experiments are isolated by default and earn their way into the deliverable through gates; anything ambiguous is treated as substance-at-risk.</td>
+<td><a href="proposed-decisions/adr-0008-beacon-vs-substance-guardrail.html">ADR-0008</a></td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -101,8 +112,8 @@ a shaping thought not yet even proposed.</p>
 <table>
 <thead>
 <tr>
-<th>Term</th>
-<th>In one sentence</th>
+<th>Topic</th>
+<th>Abstract</th>
 <th>Source</th>
 <th>Accepted</th>
 </tr>
@@ -127,10 +138,22 @@ a shaping thought not yet even proposed.</p>
 <td>no</td>
 </tr>
 <tr>
+<td>Staffing snapshot</td>
+<td>Today's line-up (a mutable snapshot, not a re-decision): driver → CKL, senior → ORE, associate architects → PKL &amp; BWE (tentative).</td>
+<td><a href="proposed-decisions/adr-0005-roles-responsibilities-staffing.html">ADR-0005</a></td>
+<td>no</td>
+</tr>
+<tr>
 <td>Succession by design</td>
 <td>The project is built so the driver can step back and the new generation owns it, with knowledge and authority never bound to a person.</td>
-<td><a href="ideas/idea-0005-succession-replaceability.html">Idea 0005</a></td>
-<td>-</td>
+<td><a href="proposed-decisions/adr-0007-succession-replaceability.html">ADR-0007</a></td>
+<td>no</td>
+</tr>
+<tr>
+<td>Ownership grown, not handed over</td>
+<td>Authority moves outward by gradual earned delegation, young architects own real work from the start, and &quot;done&quot; is a demonstrated capability — not a date.</td>
+<td><a href="proposed-decisions/adr-0007-succession-replaceability.html">ADR-0007</a></td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -139,8 +162,8 @@ a shaping thought not yet even proposed.</p>
 <table>
 <thead>
 <tr>
-<th>Term</th>
-<th>In one sentence</th>
+<th>Topic</th>
+<th>Abstract</th>
 <th>Source</th>
 <th>Accepted</th>
 </tr>
@@ -177,8 +200,8 @@ a shaping thought not yet even proposed.</p>
 <table>
 <thead>
 <tr>
-<th>Term</th>
-<th>In one sentence</th>
+<th>Topic</th>
+<th>Abstract</th>
 <th>Source</th>
 <th>Accepted</th>
 </tr>
@@ -187,8 +210,8 @@ a shaping thought not yet even proposed.</p>
 <tr>
 <td>Decision-trail</td>
 <td>We work idea → proposal → decision → plan → execution in plain markdown under <code>docs/</code>, so reasoning survives the session.</td>
-<td><a href="proposed-decisions/adr-0003-decision-culture-governance.html">ADR-0003</a></td>
-<td>no</td>
+<td><a href="../decisions/0001-adopt-decision-trail.md">ADR-0001</a></td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Talking is the collaboration</td>
@@ -222,40 +245,52 @@ a shaping thought not yet even proposed.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="platform-tooling">Platform &amp; tooling</h2>
-<p><em>Where the work lives, and how it stays reversible.</em></p>
+<h2 id="truth-platform-reversibility">Truth, platform &amp; reversibility</h2>
+<p><em>Where the work lives, how the truth stays single-sourced, and how it stays reversible.</em></p>
 <table>
 <thead>
 <tr>
-<th>Term</th>
-<th>In one sentence</th>
+<th>Topic</th>
+<th>Abstract</th>
 <th>Source</th>
 <th>Accepted</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Repos are the source of truth</td>
-<td>Everything that matters — docs and code — lives as plain files in the git repositories, never locked inside a platform surface.</td>
-<td><a href="proposed-decisions/adr-0002-tooling-sandbox-reversibility.html">ADR-0002</a></td>
+<td>Single source of truth</td>
+<td>Everything relevant — docs and code — lives as plain files in the git repositories, each fact and decision with exactly one authoritative home.</td>
+<td><a href="proposed-decisions/adr-0002-single-source-of-truth-reversibility.html">ADR-0002</a></td>
+<td>no</td>
+</tr>
+<tr>
+<td>No hidden truth</td>
+<td>No truth or decision is hidden — neither locked inside a tool nor buried unfindably in an artifact; all of it is documented.</td>
+<td><a href="proposed-decisions/adr-0002-single-source-of-truth-reversibility.html">ADR-0002</a></td>
+<td>no</td>
+</tr>
+<tr>
+<td>Cheap derived views</td>
+<td>Because single-sourced truth is scattered across repos and docs, human-facing views must be cheap to derive — regenerated from source, never a second source of truth.</td>
+<td><a href="proposed-decisions/adr-0002-single-source-of-truth-reversibility.html">ADR-0002</a></td>
 <td>no</td>
 </tr>
 <tr>
 <td>Reversibility</td>
 <td>A guaranteed, low-effort switch-back to Azure DevOps is a hard constraint that gates every tooling choice.</td>
-<td><a href="proposed-decisions/adr-0002-tooling-sandbox-reversibility.html">ADR-0002</a></td>
+<td><a href="proposed-decisions/adr-0002-single-source-of-truth-reversibility.html">ADR-0002</a></td>
 <td>no</td>
 </tr>
 <tr>
 <td>Portable</td>
 <td>An artifact is portable when its content and history survive a move to Azure DevOps by mechanical re-mapping, without loss of meaning.</td>
-<td><a href="proposed-decisions/adr-0002-tooling-sandbox-reversibility.html">ADR-0002</a></td>
+<td><a href="proposed-decisions/adr-0002-single-source-of-truth-reversibility.html">ADR-0002</a></td>
 <td>no</td>
 </tr>
 <tr>
 <td>GitHub as sandbox</td>
 <td>GitHub is a deliberately low-policy, experimental field; its proprietary surfaces (Issues, Projects) are disposable views, never authoritative.</td>
-<td><a href="proposed-decisions/adr-0002-tooling-sandbox-reversibility.html">ADR-0002</a></td>
+<td><a href="proposed-decisions/adr-0002-single-source-of-truth-reversibility.html">ADR-0002</a></td>
 <td>no</td>
 </tr>
 </tbody>
@@ -265,8 +300,8 @@ a shaping thought not yet even proposed.</p>
 <table>
 <thead>
 <tr>
-<th>Term</th>
-<th>In one sentence</th>
+<th>Topic</th>
+<th>Abstract</th>
 <th>Source</th>
 <th>Accepted</th>
 </tr>
@@ -275,25 +310,36 @@ a shaping thought not yet even proposed.</p>
 <tr>
 <td>Not from scratch</td>
 <td>The project builds on real existing substance — the sealed PoC <code>josyn-platform</code> and the consolidation repo <code>josyn-builder</code>.</td>
-<td><a href="ideas/idea-0008-relationship-to-the-josyn-field.html">Idea 0008</a></td>
-<td>-</td>
+<td><a href="proposed-decisions/adr-0009-relationship-to-the-josyn-field.html">ADR-0009</a></td>
+<td>no</td>
 </tr>
 <tr>
-<td>Inherit vs. re-open</td>
-<td>What is inherited as-is versus genuinely re-opened for team re-decision is a deliberate choice, never a blind inheritance.</td>
-<td><a href="ideas/idea-0008-relationship-to-the-josyn-field.html">Idea 0008</a></td>
-<td>-</td>
+<td>Presumptive inheritance</td>
+<td>The durable gold is inherited as-is; only PoC scaffolding and transitional pieces are re-openable, and re-opening settled gold needs a substantive objection.</td>
+<td><a href="proposed-decisions/adr-0009-relationship-to-the-josyn-field.html">ADR-0009</a></td>
+<td>no</td>
+</tr>
+<tr>
+<td>Ratify by cluster</td>
+<td>Inherited decisions are re-homed here and batch-ratified by cluster so the team genuinely owns them — review and assent, not silent import.</td>
+<td><a href="proposed-decisions/adr-0009-relationship-to-the-josyn-field.html">ADR-0009</a></td>
+<td>no</td>
+</tr>
+<tr>
+<td>Continue collaboratively</td>
+<td>The prior repos are read-only sources — mined, not extended; their unfinished threads are re-hosted here and picked up by the team.</td>
+<td><a href="proposed-decisions/adr-0009-relationship-to-the-josyn-field.html">ADR-0009</a></td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="project-management">Project management</h2>
-<p><em>Milestones, progress-keeping and stakeholder reporting — still forming; only ADR
-crumbs so far, the rest lives in the ideas.</em></p>
+<p><em>Milestones, progress-keeping and stakeholder reporting.</em></p>
 <table>
 <thead>
 <tr>
-<th>Term</th>
-<th>In one sentence</th>
+<th>Topic</th>
+<th>Abstract</th>
 <th>Source</th>
 <th>Accepted</th>
 </tr>
@@ -301,9 +347,27 @@ crumbs so far, the rest lives in the ideas.</em></p>
 <tbody>
 <tr>
 <td>Phases &amp; milestones</td>
-<td>Progress is carried in explicit, transparent phases and milestones — visible, incremental, reviewable — though the concrete set is not yet decided.</td>
-<td><a href="ideas/idea-0009-project-progress.html">Idea 0009</a></td>
-<td>-</td>
+<td>Progress is carried in explicit, transparent phases and milestones — visible, incremental, reviewable — with an adaptive phase sketch, not a frozen list.</td>
+<td><a href="proposed-decisions/adr-0010-project-progress.html">ADR-0010</a></td>
+<td>no</td>
+</tr>
+<tr>
+<td>Trail-native &amp; pull-driven</td>
+<td>Milestones live as portable markdown ADRs and plans, paced by feedback rather than fixed sprints — no external tracker, no cargo-cult ceremony.</td>
+<td><a href="proposed-decisions/adr-0010-project-progress.html">ADR-0010</a></td>
+<td>no</td>
+</tr>
+<tr>
+<td>No silent completion</td>
+<td>Declaring a milestone met is a guarded, attributable trail act — like ADR acceptance — never a silent flip.</td>
+<td><a href="proposed-decisions/adr-0010-project-progress.html">ADR-0010</a></td>
+<td>no</td>
+</tr>
+<tr>
+<td>Switch-back as a milestone</td>
+<td>The Azure DevOps switch-back is framed as a milestone criterion, its trigger deliberately surfaced but not planned yet.</td>
+<td><a href="proposed-decisions/adr-0010-project-progress.html">ADR-0010</a></td>
+<td>no</td>
 </tr>
 <tr>
 <td>Stakeholder reporting</td>
@@ -315,12 +379,6 @@ crumbs so far, the rest lives in the ideas.</em></p>
 <td>Progress-keeping</td>
 <td>Maintaining project-progress is the driver's named accountability, so progress always has an owner.</td>
 <td><a href="proposed-decisions/adr-0005-roles-responsibilities-staffing.html">ADR-0005</a></td>
-<td>no</td>
-</tr>
-<tr>
-<td>Switch-back as a milestone</td>
-<td>The Azure DevOps switch-back is framed as a milestone criterion, its trigger deliberately not planned yet.</td>
-<td><a href="proposed-decisions/adr-0002-tooling-sandbox-reversibility.html">ADR-0002</a></td>
 <td>no</td>
 </tr>
 </tbody>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Proposed Decisions — josyn-project-setup</title>
+  <title>ADR-0006: Adoption by conviction — josyn-project-setup</title>
   <link rel="stylesheet" href="../site.css">
   <script>var _sw=localStorage.getItem('sidebar-w');if(_sw)document.documentElement.style.setProperty('--sidebar-w',_sw);</script>
 </head>
@@ -16,12 +16,12 @@
 <a href="../key-points.html" class="nav-link">Key points</a>
 <details open>
   <summary class="nav-section">Proposed Decisions</summary>
-  <a href="index.html" class="nav-link active">Overview</a>
+  <a href="index.html" class="nav-link">Overview</a>
 <a href="adr-0002-single-source-of-truth-reversibility.html" class="nav-link">ADR-0002: Single source of truth &amp; reversibility</a>
 <a href="adr-0003-decision-culture-governance.html" class="nav-link">ADR-0003: Decision culture &amp; governance</a>
 <a href="adr-0004-collaborative-way-of-working.html" class="nav-link">ADR-0004: Collaborative way-of-working</a>
 <a href="adr-0005-roles-responsibilities-staffing.html" class="nav-link">ADR-0005: Roles, responsibilities &amp; staffing</a>
-<a href="adr-0006-adoption-by-conviction.html" class="nav-link">ADR-0006: Adoption by conviction</a>
+<a href="adr-0006-adoption-by-conviction.html" class="nav-link active">ADR-0006: Adoption by conviction</a>
 <a href="adr-0007-succession-replaceability.html" class="nav-link">ADR-0007: Succession &amp; replaceability</a>
 <a href="adr-0008-beacon-vs-substance-guardrail.html" class="nav-link">ADR-0008: Beacon vs. substance guardrail</a>
 <a href="adr-0009-relationship-to-the-josyn-field.html" class="nav-link">ADR-0009: Relationship to the josyn field</a>
@@ -53,18 +53,84 @@
   <div id="sidebar-resizer"></div>
   <main>
     <article>
-      <h1>Proposed Decisions</h1>
-<p>Proposed decisions (ADRs), one per idea.</p>
+      <h1 id="adr-0006-adoption-by-conviction">ADR-0006: Adoption by conviction</h1>
 <ul>
-  <li><a href="adr-0002-single-source-of-truth-reversibility.html">ADR-0002: Single source of truth &amp; reversibility</a></li>
-  <li><a href="adr-0003-decision-culture-governance.html">ADR-0003: Decision culture &amp; governance</a></li>
-  <li><a href="adr-0004-collaborative-way-of-working.html">ADR-0004: Collaborative way-of-working</a></li>
-  <li><a href="adr-0005-roles-responsibilities-staffing.html">ADR-0005: Roles, responsibilities &amp; staffing</a></li>
-  <li><a href="adr-0006-adoption-by-conviction.html">ADR-0006: Adoption by conviction</a></li>
-  <li><a href="adr-0007-succession-replaceability.html">ADR-0007: Succession &amp; replaceability</a></li>
-  <li><a href="adr-0008-beacon-vs-substance-guardrail.html">ADR-0008: Beacon vs. substance guardrail</a></li>
-  <li><a href="adr-0009-relationship-to-the-josyn-field.html">ADR-0009: Relationship to the josyn field</a></li>
-  <li><a href="adr-0010-project-progress.html">ADR-0010: Project progress</a></li>
+<li>Date: 2026-07-18</li>
+<li>Status: proposed</li>
+<li>Promoted from: <a href="../ideas/idea-0002-adoption-by-conviction.html">Idea 0002: Adoption by conviction</a></li>
+<li>Tags: culture, change-management, psychology</li>
+</ul>
+<h2 id="context">Context</h2>
+<p>The non-negotiables — <strong>agentic</strong> and <strong>decision-driven</strong> — must be adopted by
+<strong>genuine conviction, not decree</strong>. The task is to win buy-in across three
+audiences that start from different stances:</p>
+<ul>
+<li>the <strong>experienced architect-mate</strong> — a peer to keep fully in the loop;</li>
+<li>the <strong>2 young architects</strong> — possible future owners, to empower;</li>
+<li>the <strong>4 technical leads (incl. the &quot;leads-lead&quot;) and the department head</strong> —
+peers and authority carrying the weight of the traditional way, to convince and
+keep aligned.</li>
+</ul>
+<p>The driver <em>can</em> have the last word but does not want anyone overruled or left
+unconvinced. A culture adopted <strong>by reason</strong> is the only kind that survives the
+founder's eventual exit; imposed practice would collapse the moment he steps back.
+This ADR settles <em>how</em> conviction is won — the mechanism, not a schedule.</p>
+<h2 id="decision-drivers">Decision Drivers</h2>
+<ul>
+<li>Conviction must be <strong>genuine</strong> — imposed practice collapses once the founder
+steps back, defeating the whole purpose.</li>
+<li>The driver will not overrule or leave anyone unconvinced — reason, not decree.</li>
+<li>Different audiences respond to <strong>different levers</strong>; one pitch does not fit all.</li>
+<li>Early credibility is fragile — over-promising and then stumbling discredits the
+entire shift.</li>
+<li>Work must never stall waiting for unanimous conviction.</li>
+</ul>
+<h2 id="considered-options">Considered Options</h2>
+<ul>
+<li><strong>A — Tailored, pull-based adoption, won by example and radiating outward.</strong> Use
+the right lever per audience, lead quietly by doing real work through the trail,
+and let demonstrated success build the case audience by audience.</li>
+<li><strong>B — Scheduled top-down rollout with a kickoff pitch/demo.</strong> Fast and legible,
+but decree-like; it risks over-promising, and any early stumble discredits the
+method — the opposite of &quot;by conviction.&quot;</li>
+<li><strong>C — Consensus first: wait until everyone is convinced before adopting.</strong>
+Honest but brittle — a single holdout stalls the whole shift indefinitely.</li>
+</ul>
+<p><strong>Why A.</strong> It makes conviction genuine and durable by winning it through evidence
+and participation rather than decree, while never letting a holdout block progress.
+B inverts the &quot;by reason&quot; culture and over-promises; C has no exit from deadlock.</p>
+<h2 id="proposed-decision">Proposed decision</h2>
+<ol>
+<li><strong>Win conviction per audience, with the right lever.</strong> <strong>Participation</strong> for the
+young architects (empowered as possible future owners); <strong>evidence and
+demonstration</strong> for the technical leads and department head; a <strong>co-driver
+partnership</strong> for the experienced architect-mate, in the loop from the start.</li>
+<li><strong>Lead by example, quietly.</strong> No big pitch or staged demo moment — run genuine
+work through the decision-trail and let the artifacts speak. Deliberately
+<strong>under-promise</strong>; let observed value, not claims, do the convincing.</li>
+<li><strong>Radiate outward.</strong> Start where conviction is easiest — the architect-mate as
+co-driver together with the young architects — and let demonstrated success
+build the case before the leads and department head fully adopt.</li>
+<li><strong>Coexist with dissent.</strong> Keep engaging a genuinely unconvinced peer by argument
+over time; never force adoption, and rely on accumulating evidence to convince.
+Invoke the ADR-0003 escalation ladder <strong>only if work is actually blocked</strong>, not
+to end disagreement.</li>
+<li><strong>Pace is pull-based, not scheduled.</strong> Adoption spreads as conviction is won,
+audience by audience — no fixed rollout date, trading speed for durability.</li>
+</ol>
+<h2 id="consequences">Consequences</h2>
+<ul>
+<li>The culture rests on <strong>reason</strong>, so it can outlast the founder's exit — precisely
+the point; the trade is that adoption is gradual and uneven, with no rollout date.</li>
+<li><strong>Leading quietly</strong> protects early credibility but makes adoption harder to
+observe or measure — success shows in the trail's actual use, not in
+announcements.</li>
+<li><strong>Coexistence</strong> tolerates a persistent holdout indefinitely; this is accepted
+deliberately as the cost of &quot;by reason,&quot; with the <a href="adr-0003-decision-culture-governance.html">ADR-0003</a>
+escalation ladder as the bounded backstop if, and only if, work blocks.</li>
+<li>This ADR decides the <strong>adoption stance</strong>; concrete tactics — which work to
+showcase, how exactly to involve each person, when to widen the circle — are
+refined as the practice matures.</li>
 </ul>
 
     </article>

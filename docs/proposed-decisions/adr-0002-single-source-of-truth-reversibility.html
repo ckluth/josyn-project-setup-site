@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ADR-0002: Tooling sandbox &amp; reversibility — josyn-project-setup</title>
+  <title>ADR-0002: Single source of truth &amp; reversibility — josyn-project-setup</title>
   <link rel="stylesheet" href="../site.css">
   <script>var _sw=localStorage.getItem('sidebar-w');if(_sw)document.documentElement.style.setProperty('--sidebar-w',_sw);</script>
 </head>
@@ -14,6 +14,19 @@
     <div class="nav-header">josyn-project-setup</div>
     <a href="../index.html" class="nav-home">Home</a>
 <a href="../key-points.html" class="nav-link">Key points</a>
+<details open>
+  <summary class="nav-section">Proposed Decisions</summary>
+  <a href="index.html" class="nav-link">Overview</a>
+<a href="adr-0002-single-source-of-truth-reversibility.html" class="nav-link active">ADR-0002: Single source of truth &amp; reversibility</a>
+<a href="adr-0003-decision-culture-governance.html" class="nav-link">ADR-0003: Decision culture &amp; governance</a>
+<a href="adr-0004-collaborative-way-of-working.html" class="nav-link">ADR-0004: Collaborative way-of-working</a>
+<a href="adr-0005-roles-responsibilities-staffing.html" class="nav-link">ADR-0005: Roles, responsibilities &amp; staffing</a>
+<a href="adr-0006-adoption-by-conviction.html" class="nav-link">ADR-0006: Adoption by conviction</a>
+<a href="adr-0007-succession-replaceability.html" class="nav-link">ADR-0007: Succession &amp; replaceability</a>
+<a href="adr-0008-beacon-vs-substance-guardrail.html" class="nav-link">ADR-0008: Beacon vs. substance guardrail</a>
+<a href="adr-0009-relationship-to-the-josyn-field.html" class="nav-link">ADR-0009: Relationship to the josyn field</a>
+<a href="adr-0010-project-progress.html" class="nav-link">ADR-0010: Project progress</a>
+</details>
 <details>
   <summary class="nav-section">Ideas</summary>
   <a href="../ideas/index.html" class="nav-link">Overview</a>
@@ -28,14 +41,6 @@
 <a href="../ideas/idea-0009-project-progress.html" class="nav-link">Idea 0009: Project progress</a>
 <a href="../ideas/idea-0010-roles-responsibilities-staffing.html" class="nav-link">Idea 0010: Roles, responsibilities &amp; staffing</a>
 </details>
-<details open>
-  <summary class="nav-section">Proposed Decisions</summary>
-  <a href="index.html" class="nav-link">Overview</a>
-<a href="adr-0002-tooling-sandbox-reversibility.html" class="nav-link active">ADR-0002: Tooling sandbox &amp; reversibility</a>
-<a href="adr-0003-decision-culture-governance.html" class="nav-link">ADR-0003: Decision culture &amp; governance</a>
-<a href="adr-0004-collaborative-way-of-working.html" class="nav-link">ADR-0004: Collaborative way-of-working</a>
-<a href="adr-0005-roles-responsibilities-staffing.html" class="nav-link">ADR-0005: Roles, responsibilities &amp; staffing</a>
-</details>
 <details>
   <summary class="nav-section">Intermediate artifacts</summary>
   <a href="../intermediate-artifacts/index.html" class="nav-link">Overview</a>
@@ -48,12 +53,12 @@
   <div id="sidebar-resizer"></div>
   <main>
     <article>
-      <h1 id="adr-0002-tooling-sandbox-reversibility">ADR-0002: Tooling sandbox &amp; reversibility</h1>
+      <h1 id="adr-0002-single-source-of-truth-reversibility">ADR-0002: Single source of truth &amp; reversibility</h1>
 <ul>
 <li>Date: 2026-07-17</li>
 <li>Status: proposed</li>
 <li>Promoted from: <a href="../ideas/idea-0006-tooling-sandbox-reversibility.html">Idea 0006: Tooling sandbox &amp; reversibility</a></li>
-<li>Tags: tooling, policy, reversibility</li>
+<li>Tags: tooling, reversibility, transparency, single-source-of-truth</li>
 </ul>
 <h2 id="context">Context</h2>
 <p>The project's &quot;new way&quot; runs on <strong>GitHub</strong>, deliberately free of policy-burden — a
@@ -61,6 +66,15 @@ low-friction, experimental field that makes agentic ways of working feasible. Th
 freedom is only <em>acceptable</em> to the organization because a <strong>switch back to the
 Azure DevOps corporate standard</strong> (work items, pipelines, standard policy) stays
 guaranteed. Reversibility is therefore a <strong>hard constraint</strong>, not an afterthought.</p>
+<p>This ADR carries a <strong>second, intertwined principle</strong>: the repositories are the
+project's <strong>single source of truth</strong>. No relevant truth or decision may be hidden —
+neither locked inside a tool nor buried and unfindable in an artifact; all relevant
+truth is <strong>documented</strong> in plain files in the repos. The two constraints reinforce
+each other — truth that is single-sourced in portable files is exactly what makes the
+switch-back mechanical. Single-sourcing has one cost: the whole truth ends up
+<strong>scattered</strong> across many repos and documents, so it must stay <strong>cheap to derive
+human-facing &quot;views&quot;</strong> over it — legibility must never be sacrificed for
+single-sourcing.</p>
 <p>For that guarantee to hold, &quot;reversible&quot; needs a definition sharp enough to <em>gate</em>
 tooling choices rather than merely inspire them.</p>
 <p><strong>Portable</strong> — the term the constraint rests on — means: an artifact's
@@ -82,6 +96,11 @@ commits and markdown, independent of the hosting platform.</li>
 <li>The low-policy sandbox is what makes agentic experimentation feasible.</li>
 <li>The guaranteed return path is what makes the sandbox organizationally acceptable.</li>
 <li>The switch-back must be <strong>low-effort</strong> — feasible on demand, not a heroic project.</li>
+<li><strong>Single source of truth</strong> — everything relevant is documented in the repos; no
+truth or decision hidden in a tool or buried unfindably in an artifact.</li>
+<li><strong>Cheap derived views</strong> — because single-sourced truth is scattered across repos
+and documents, deriving human-facing views over it must stay cheap, so legibility
+never costs single-sourcing.</li>
 </ul>
 <h2 id="considered-options">Considered Options</h2>
 <ul>
@@ -110,7 +129,10 @@ Reversibility only stays a guarantee if it is a hard line.</p>
 repos are the single source of truth. Anything that matters to the project's
 decisions, work, or execution is a file in a repo. Concretely, these are
 <strong>private repositories under the <a href="https://github.com/haevg-rz"><code>haevg-rz</code></a>
-GitHub organization</strong>.</li>
+GitHub organization</strong>. Nothing relevant is hidden — not locked in a tool, not
+buried unfindably in an artifact; all relevant truth is <strong>documented</strong> in those
+files. <strong>Single-point-of-truth is the crucial principle:</strong> each fact and decision
+has exactly one authoritative home.</li>
 <li><strong>No tooling-choice binding.</strong> No platform-proprietary surface may become the
 authoritative record of anything relevant. Platform features (GitHub Issues,
 Projects, etc.) are permitted only as <strong>disposable views</strong> over repo content,
@@ -120,6 +142,13 @@ all relevant content. Because the authoritative state is portable by
 construction, the switch-back stays a <strong>mechanical re-mapping</strong> (markdown and
 pipeline-as-code re-mapped to work items and Azure Pipelines), not a
 reconstruction.</li>
+<li><strong>Cheap derived views over the scattered truth.</strong> Because the single source of
+truth is spread across many repos and documents, there must be a <strong>cheap way to
+derive &quot;views&quot;</strong> over it for different needs — chiefly for humans. Views are
+<strong>derived, never authoritative</strong>: regenerated from the source files, never
+hand-maintained as a parallel truth. The decision-trail already works this way —
+<code>docs/overview.md</code>, <code>docs/derived-artifacts/</code>, and the human guides are derived
+projections over the trail. Single-sourcing must never cost legibility.</li>
 </ol>
 <p>Every tooling choice is tested against this line: <em>if it were removed tomorrow,
 does all relevant content still survive in the repos and re-map mechanically to
@@ -128,6 +157,10 @@ Azure DevOps?</em> If not, the choice is not allowed to hold authoritative state
 <ul>
 <li>The decision-trail markdown under <code>docs/</code> and the project's code are, by design,
 on the portable side of the line — this project already works this way.</li>
+<li><strong>Single-sourcing plus cheap derived views</strong> keeps the whole truth both honest
+(one authoritative home, nothing hidden) and legible (human-facing views derived
+on demand); the discipline is that a view is always <strong>regenerated from source</strong>,
+never allowed to harden into a second source of truth.</li>
 <li>Pipeline-as-code (<code>.github/workflows/*.yml</code>) is acceptable: proprietary syntax,
 but plain files in the repo that re-map mechanically to Azure Pipelines YAML.</li>
 <li>GitHub Issues / Projects and similar surfaces may be used for convenience but must

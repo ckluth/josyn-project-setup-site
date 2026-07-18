@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADR-0007: Succession &amp; replaceability — josyn-project-setup</title>
+  <link rel="stylesheet" href="../site.css">
+  <script>var _sw=localStorage.getItem('sidebar-w');if(_sw)document.documentElement.style.setProperty('--sidebar-w',_sw);</script>
+</head>
+<body>
+  <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  <div id="nav-backdrop"></div>
+  <nav id="sidebar">
+    <div class="nav-header">josyn-project-setup</div>
+    <a href="../index.html" class="nav-home">Home</a>
+<a href="../key-points.html" class="nav-link">Key points</a>
+<details open>
+  <summary class="nav-section">Proposed Decisions</summary>
+  <a href="index.html" class="nav-link">Overview</a>
+<a href="adr-0002-single-source-of-truth-reversibility.html" class="nav-link">ADR-0002: Single source of truth &amp; reversibility</a>
+<a href="adr-0003-decision-culture-governance.html" class="nav-link">ADR-0003: Decision culture &amp; governance</a>
+<a href="adr-0004-collaborative-way-of-working.html" class="nav-link">ADR-0004: Collaborative way-of-working</a>
+<a href="adr-0005-roles-responsibilities-staffing.html" class="nav-link">ADR-0005: Roles, responsibilities &amp; staffing</a>
+<a href="adr-0006-adoption-by-conviction.html" class="nav-link">ADR-0006: Adoption by conviction</a>
+<a href="adr-0007-succession-replaceability.html" class="nav-link active">ADR-0007: Succession &amp; replaceability</a>
+<a href="adr-0008-beacon-vs-substance-guardrail.html" class="nav-link">ADR-0008: Beacon vs. substance guardrail</a>
+<a href="adr-0009-relationship-to-the-josyn-field.html" class="nav-link">ADR-0009: Relationship to the josyn field</a>
+<a href="adr-0010-project-progress.html" class="nav-link">ADR-0010: Project progress</a>
+</details>
+<details>
+  <summary class="nav-section">Ideas</summary>
+  <a href="../ideas/index.html" class="nav-link">Overview</a>
+<a href="../ideas/idea-0001-found-the-collaborative-decision-driven-agentic-way-of-working.html" class="nav-link">Idea 0001: Found the collaborative, decision-driven agentic way of working</a>
+<a href="../ideas/idea-0002-adoption-by-conviction.html" class="nav-link">Idea 0002: Adoption by conviction</a>
+<a href="../ideas/idea-0003-decision-culture-governance.html" class="nav-link">Idea 0003: Decision culture &amp; governance</a>
+<a href="../ideas/idea-0004-collaborative-way-of-working.html" class="nav-link">Idea 0004: Collaborative way-of-working</a>
+<a href="../ideas/idea-0005-succession-replaceability.html" class="nav-link">Idea 0005: Succession &amp; replaceability</a>
+<a href="../ideas/idea-0006-tooling-sandbox-reversibility.html" class="nav-link">Idea 0006: Tooling sandbox &amp; reversibility</a>
+<a href="../ideas/idea-0007-beacon-vs-substance-guardrail.html" class="nav-link">Idea 0007: Beacon vs. substance guardrail</a>
+<a href="../ideas/idea-0008-relationship-to-the-josyn-field.html" class="nav-link">Idea 0008: Relationship to the josyn field</a>
+<a href="../ideas/idea-0009-project-progress.html" class="nav-link">Idea 0009: Project progress</a>
+<a href="../ideas/idea-0010-roles-responsibilities-staffing.html" class="nav-link">Idea 0010: Roles, responsibilities &amp; staffing</a>
+</details>
+<details>
+  <summary class="nav-section">Intermediate artifacts</summary>
+  <a href="../intermediate-artifacts/index.html" class="nav-link">Overview</a>
+<a href="../intermediate-artifacts/source-inventory-josyn-platform-sealed-poc.html" class="nav-link">Source inventory — josyn-platform (sealed PoC)</a>
+<a href="../intermediate-artifacts/source-inventory-josyn-builder-follow-up-consolidation-repo.html" class="nav-link">Source inventory — josyn-builder (follow-up consolidation repo)</a>
+</details>
+<a href="../search/index.html" class="nav-link">Search</a>
+
+  </nav>
+  <div id="sidebar-resizer"></div>
+  <main>
+    <article>
+      <h1 id="adr-0007-succession-replaceability">ADR-0007: Succession &amp; replaceability</h1>
+<ul>
+<li>Date: 2026-07-18</li>
+<li>Status: proposed</li>
+<li>Promoted from: <a href="../ideas/idea-0005-succession-replaceability.html">Idea 0005: Succession &amp; replaceability</a></li>
+<li>Tags: succession, culture, governance</li>
+</ul>
+<h2 id="context">Context</h2>
+<p>The project is deliberately designed so the <strong>driver can step back</strong> and the <strong>new
+generation owns it</strong> — knowledge and authority <strong>not bound to a person</strong>. This is
+explicitly <em>not about the driver</em>: when the work is done he wants to disappear
+cleanly and let the next generation take over. Key-person dependency would defeat
+both the collaboration goal and the beacon goal.</p>
+<p>The seed idea left four open questions, which this ADR settles:</p>
+<ul>
+<li>What does <strong>&quot;done&quot;</strong> mean for a clean hand-over of ownership?</li>
+<li>How does <strong>authority</strong> (accepting decisions, stewarding the method) transfer?</li>
+<li>How do we <strong>surface and remove single-points-of-knowledge</strong>?</li>
+<li>How do the young architects <strong>grow into owners along the way</strong>, not at the end?</li>
+</ul>
+<p>This ADR decides the <em>stance and mechanism</em> of succession; concrete timing, who
+holds which authority when, and specific rotation choices are refined as the
+practice matures.</p>
+<h2 id="decision-drivers">Decision Drivers</h2>
+<ul>
+<li>Continuity must survive the founder's exit — a culture that collapses when he
+steps back has failed its own purpose.</li>
+<li>Authority and knowledge must <strong>not</strong> concentrate in one person (the driver
+included) — key-person dependency is the failure mode to design out.</li>
+<li>Ownership is more durable when <strong>earned and grown continuously</strong> than when
+transferred in a single late event.</li>
+<li>The method already externalizes reasoning into plain markdown — succession
+should lean on that, inventing nothing new.</li>
+<li>Consistency with the adoption stance (<a href="adr-0006-adoption-by-conviction.html">ADR-0006</a>)
+and the governance ladder (<a href="adr-0003-decision-culture-governance.html">ADR-0003</a>).</li>
+</ul>
+<h2 id="considered-options">Considered Options</h2>
+<ul>
+<li><strong>A — Continuous earned delegation via the trail.</strong> Ownership accrues from the
+start: the new generation authors and accepts real artifacts, authority is
+delegated incrementally as it is demonstrated, and the decision-trail keeps
+knowledge out of any single head. &quot;Done&quot; is a demonstrated capability.</li>
+<li><strong>B — Big-bang hand-over at the end.</strong> The driver holds authority and knowledge
+until a final transfer event. Legible but brittle — it manufactures exactly the
+key-person dependency it is meant to end, and concentrates risk at one moment.</li>
+<li><strong>C — Informal / no explicit succession.</strong> Assume ownership diffuses on its own.
+Cheapest, but leaves single-points-of-knowledge unsurfaced and the hand-over
+undefined — succession by hope, not design.</li>
+</ul>
+<p><strong>Why A.</strong> It makes ownership genuine and durable by growing it continuously rather
+than transferring it late, and it reuses the trail as the anti-key-person
+mechanism. B recreates the dependency it aims to remove and concentrates risk; C
+leaves the core questions unanswered.</p>
+<h2 id="proposed-decision">Proposed decision</h2>
+<ol>
+<li><p><strong>&quot;Done&quot; is a demonstrated capability, not a date or ceremony.</strong> Hand-over is
+complete when the trail runs <strong>without the driver in any critical path</strong>: the
+new generation authors ideas, ADRs, and plans, accepts decisions, and stewards
+the method unaided for a sustained stretch — and the driver's absence changes
+nothing. Readiness is <em>shown</em>, not scheduled.</p>
+</li>
+<li><p><strong>Authority transfers by gradual, earned delegation — not a single handoff.</strong>
+Acceptance authority and method-stewardship move to the young architects
+incrementally as they demonstrate them, using the
+<a href="adr-0003-decision-culture-governance.html">ADR-0003</a> governance ladder. The
+driver <strong>deliberately relinquishes the last word</strong>, retreating to advisor and
+finally to nothing. The direction is one-way: authority only ever moves outward.</p>
+</li>
+<li><p><strong>The decision-trail is the anti-key-person mechanism.</strong> Everything of weight
+lives in plain, human-readable markdown — nothing critical stays in one head.
+Any <em>&quot;only X knows this&quot;</em> is treated as a <strong>defect to be written down</strong>.
+<strong>Authorship is actively rotated</strong> so no area acquires a sole owner; concentrated
+knowledge is surfaced and dissolved as normal hygiene, not a late audit.</p>
+</li>
+<li><p><strong>Young architects own real work from the start, growing continuously.</strong> They
+own genuine ADRs and plans from the outset — not shadowing — with responsibility
+<strong>widening as conviction and capability grow</strong>, consistent with the
+<em>participation</em> lever in <a href="adr-0006-adoption-by-conviction.html">ADR-0006</a>. Because
+ownership accrues along the way, there is <strong>nothing left to transfer at the
+end</strong> — the hand-over is the sum of many small ones already made.</p>
+</li>
+</ol>
+<h2 id="consequences">Consequences</h2>
+<ul>
+<li>Ownership is <strong>durable and founder-independent</strong> — the point of the exercise; the
+trade is that succession is gradual and uneven, with no fixed completion date.</li>
+<li><strong>&quot;Done&quot; as a demonstrated capability</strong> resists gaming by ceremony but makes the
+milestone a judgment call — read from the trail's actual unaided use, not
+declared.</li>
+<li><strong>Rotating authorship</strong> costs some short-term efficiency (the fastest author is
+not always the one who should write it) in exchange for removing
+single-points-of-knowledge — an accepted trade.</li>
+<li><strong>One-way delegation</strong> means the driver progressively gives up control by design;
+this is deliberate and consistent with adoption <em>by conviction</em>
+(<a href="adr-0006-adoption-by-conviction.html">ADR-0006</a>), not decree.</li>
+<li>This ADR sets the <strong>succession stance</strong>; concrete sequencing — which authority
+moves when, exactly how rotation is scheduled, and when the driver steps fully
+back — is refined as the practice matures.</li>
+</ul>
+
+    </article>
+  </main>
+  <script>
+    var toggle   = document.getElementById('nav-toggle');
+    var backdrop = document.getElementById('nav-backdrop');
+    function closeNav() { document.body.classList.remove('nav-open'); }
+    toggle.addEventListener('click', function() {
+      document.body.classList.toggle('nav-open');
+    });
+    backdrop.addEventListener('click', closeNav);
+    document.querySelectorAll('#sidebar a').forEach(function(a) {
+      a.addEventListener('click', closeNav);
+    });
+
+    var resizer = document.getElementById('sidebar-resizer');
+    var resizeW = null;
+    resizer.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    resizer.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      document.addEventListener('mousemove', onResize);
+      document.addEventListener('mouseup', stopResize);
+    });
+    resizer.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      document.addEventListener('touchmove', onTouchResize, { passive: false });
+      document.addEventListener('touchend', stopTouchResize);
+    }, { passive: false });
+    function onResize(e) {
+      resizeW = Math.max(160, Math.min(600, e.clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function onTouchResize(e) {
+      e.preventDefault();
+      resizeW = Math.max(160, Math.min(600, e.touches[0].clientX)) + 'px';
+      document.documentElement.style.setProperty('--sidebar-w', resizeW);
+    }
+    function stopResize() {
+      document.removeEventListener('mousemove', onResize);
+      document.removeEventListener('mouseup', stopResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+    function stopTouchResize() {
+      document.removeEventListener('touchmove', onTouchResize);
+      document.removeEventListener('touchend', stopTouchResize);
+      if (resizeW) localStorage.setItem('sidebar-w', resizeW);
+    }
+  </script>
+  <script src="../mermaid.min.js"></script><script>mermaid.initialize({startOnLoad:false,theme:'dark'});mermaid.run({querySelector:'.mermaid'});</script>
+</body>
+</html>
